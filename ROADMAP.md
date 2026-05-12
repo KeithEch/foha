@@ -14,9 +14,9 @@
 
 ### Tasks
 
-- [ ] Initialize Git repository with a clear branching strategy (`main` = production, `dev` = working branch)
-- [ ] Set up project scaffolding with a modern build tool (Vite recommended for its speed and simplicity)
-- [ ] Configure `.gitignore`, `README.md`, and folder structure (`/src`, `/public`, `/cms`, `/dist`)
+- [x] Initialize Git repository with a clear branching strategy (`main` = production, `dev` = working branch)
+- [x] Set up project scaffolding with a modern build tool (Vite recommended for its speed and simplicity)
+- [x] Configure `.gitignore`, `README.md`, and folder structure (`/src`, `/public`, `/cms`, `/dist`)
 - [ ] Set up DreamHost hosting: configure domain, FTP/SSH access, and establish a deployment workflow (e.g., GitHub Actions → DreamHost via SFTP or rsync)
 - [ ] Add a basic `index.html` placeholder and confirm it deploys and renders correctly on DreamHost
 - [ ] Document the deployment workflow in `README.md`
