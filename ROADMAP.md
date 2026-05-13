@@ -1,7 +1,7 @@
 # Website Project Roadmap
 
 **Project:** foha — Single-page website
-**Hosting:** DreamHost
+**Hosting:** Netlify (auto-deploy from GitHub `main`)
 **CMS:** Decap CMS (git-based, free)
 
 > Status tracking: Each phase has tasks, deliverables, and a definition of done.
@@ -17,14 +17,13 @@
 - [x] Initialize Git repository with a clear branching strategy (`main` = production, `dev` = working branch)
 - [x] Set up project scaffolding with a modern build tool (Vite recommended for its speed and simplicity)
 - [x] Configure `.gitignore`, `README.md`, and folder structure (`/src`, `/public`, `/cms`, `/dist`)
-- [ ] Set up DreamHost hosting: configure domain, FTP/SSH access, and establish a deployment workflow (e.g., GitHub Actions → DreamHost via SFTP or rsync)
-- [ ] Add a basic `index.html` placeholder and confirm it deploys and renders correctly on DreamHost
+- [ ] Add a basic `index.html` placeholder and confirm it deploys and renders correctly on Netlify
 - [ ] Document the deployment workflow in `README.md`
 
 ### Deliverables
 
-- Live placeholder page on DreamHost
-- Working deploy pipeline
+- Live placeholder page on Netlify
+- Working deploy pipeline (GitHub `main` → Netlify auto-deploy)
 - Project folder structure committed to repo
 
 ---
@@ -83,23 +82,16 @@
 #### Decap CMS Setup
 
 - [ ] Add `admin/index.html` and `admin/config.yml` per Decap CMS documentation
-- [ ] Configure Git Gateway (via Netlify Identity or a self-hosted alternative compatible with DreamHost)
+- [ ] Configure Git Gateway via Netlify Identity
 - [ ] Define content collections in `config.yml` for each editable text section (hero headline, overview body, prologue text, retail links, etc.)
 - [ ] Connect content fields to rendered HTML via a static site approach (templating or simple JS content loading from generated JSON/Markdown)
 - [ ] Test the CMS editorial workflow: log in → edit → publish → verify update on site
 
-#### DreamHost Configuration
-
-- [ ] Create/configure `.htaccess` for: clean URLs, HTTPS redirect, correct MIME types, caching headers, and security headers (CSP, `X-Frame-Options`, etc.)
-- [ ] Confirm PHP version compatibility if any server-side include is needed
-- [ ] Test 404 handling
-
 ### Deliverables
 
-- Navigable HTML shell live on DreamHost
+- Navigable HTML shell live on Netlify
 - Working Decap CMS editorial workflow
 - Modal component tested and accessible
-- `.htaccess` configured and validated
 
 ---
 
@@ -223,7 +215,7 @@
 - [ ] Optimize images: use modern formats (WebP with JPEG fallback), correct sizing
 - [ ] Verify lazy loading is working
 - [ ] Minimize and bundle CSS/JS via Vite build
-- [ ] Set cache headers in `.htaccess` for static assets
+- [ ] Configure cache headers via `netlify.toml` for static assets
 
 ### 5.4 — Cross-Browser Testing
 
@@ -232,15 +224,15 @@
 ### 5.5 — CMS Final Verification
 
 - [ ] Confirm all CMS-editable fields are connected and update correctly
-- [ ] Confirm media uploads work on DreamHost
+- [ ] Confirm media uploads work via Netlify CMS / Git LFS
 - [ ] Document editorial workflow for content editors in `CMS-GUIDE.md`
 
 ### 5.6 — Launch
 
 - [ ] Merge `dev` → `main`
-- [ ] Trigger final deploy to DreamHost
+- [ ] Confirm Netlify auto-deploy triggers and completes successfully
 - [ ] Verify live site on production URL
-- [ ] Confirm HTTPS is active and redirects work
+- [ ] Confirm HTTPS is active (Netlify provisions this automatically)
 - [ ] Submit sitemap to Google Search Console (if applicable)
 - [ ] Post-launch smoke test: nav, modals, gallery, retail links, easter egg trigger, CMS
 
