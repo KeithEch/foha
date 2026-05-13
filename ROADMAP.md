@@ -17,7 +17,7 @@
 - [x] Initialize Git repository with a clear branching strategy (`main` = production, `dev` = working branch)
 - [x] Set up project scaffolding with a modern build tool (Vite recommended for its speed and simplicity)
 - [x] Configure `.gitignore`, `README.md`, and folder structure (`/src`, `/public`, `/cms`, `/dist`)
-- [ ] Add a basic `index.html` placeholder and confirm it deploys and renders correctly on Netlify
+- [x] Add a basic `index.html` placeholder and confirm it deploys and renders correctly on Netlify
 - [ ] Document the deployment workflow in `README.md`
 
 ### Deliverables
