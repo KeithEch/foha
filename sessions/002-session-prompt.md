@@ -37,11 +37,24 @@ By the end of this session: `tokens.css` is complete and committed, `DESIGN-SYST
 
 ---
 
+## Design Reference
+
+Brand colors, typography, and spacing are sourced from the Figma file:
+
+**[FOHA club website — Figma](https://www.figma.com/design/XsjKeeMALXqJLBywDkyqJL/FOHA-club-website?node-id=0-1&t=RrzEgV7DFOj9NmNO-1)**
+
+Before writing any tokens, read the Figma file to extract:
+- Color palette (primary, secondary, accent, neutral scales)
+- Typography (font families, size scale, weights)
+- Spacing units and base scale
+
+Pause and ask if the Figma file does not clearly define any of these values.
+
+---
+
 ## Open Questions
 
-- **Brand colors:** What is the color palette for foha? Primary, secondary, accent? If unknown, pause and ask before writing any color tokens.
-- **Typography:** Is there a specific font family (Google Font, system font stack, or custom)? If unknown, pause and ask.
-- **Spacing base unit:** Roadmap suggests 4px base — confirm before writing the scale.
+- **Spacing base unit:** Roadmap suggests 4px base — confirm against Figma before writing the scale.
 
 ---
 
