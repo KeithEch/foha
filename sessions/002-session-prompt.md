@@ -15,7 +15,7 @@ By the end of this session: `tokens.css` is complete and committed, `DESIGN-SYST
 ## Tasks
 
 - [ ] Create `/src/design-system/tokens.css` defining CSS custom properties for:
-  - **Color:** Brand palette (primary, secondary, accent, neutral scales), semantic tokens (text, background, border, interactive states)
+  - **Color:** Palette (primary, secondary, accent, neutral scales), semantic tokens (text, background, border, interactive states)
   - **Typography:** Font families, size scale (e.g., `--text-xs` through `--text-4xl`), line-height, letter-spacing, weight tokens
   - **Spacing:** A consistent scale (e.g., 4px base unit → `--space-1` through `--space-16`)
   - **Borders & Radii:** Corner radius tokens, border width tokens
@@ -39,7 +39,7 @@ By the end of this session: `tokens.css` is complete and committed, `DESIGN-SYST
 
 ## Design Reference
 
-Brand colors, typography, and spacing are sourced from the Figma file:
+Colors, typography, and spacing are sourced from the Figma file:
 
 **[FOHA club website — Figma](https://www.figma.com/design/XsjKeeMALXqJLBywDkyqJL/FOHA-club-website?node-id=0-1&t=RrzEgV7DFOj9NmNO-1)**
 
