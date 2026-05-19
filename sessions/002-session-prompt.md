@@ -14,16 +14,17 @@ By the end of this session: `tokens.css` is complete and committed, `DESIGN-SYST
 
 ## Tasks
 
-- [ ] Create `/src/design-system/tokens.css` defining CSS custom properties for:
-  - **Color:** Palette (primary, secondary, accent, neutral scales), semantic tokens (text, background, border, interactive states)
-  - **Typography:** Font families, size scale (e.g., `--text-xs` through `--text-4xl`), line-height, letter-spacing, weight tokens
-  - **Spacing:** A consistent scale (e.g., 4px base unit → `--space-1` through `--space-16`)
-  - **Borders & Radii:** Corner radius tokens, border width tokens
-  - **Shadows & Elevation:** Subtle shadow tokens for modals and cards
-  - **Animation:** Duration tokens (`--duration-fast`, `--duration-base`, `--duration-slow`), easing curves
-- [ ] Create `DESIGN-SYSTEM.md` documenting every token with its intended use — this is Claude Code's reference
-- [ ] Build `/src/design-system/preview.html` that renders a visual swatch sheet of all tokens (for QA and iteration)
-- [ ] Define responsive breakpoints (`--bp-mobile`, `--bp-tablet`, `--bp-desktop`, `--bp-wide`) and document them
+- [ ] Import the foha DS variable collection from the Figma file referenced in the Design Reference section.
+- [ ] Create `/src/design-system/tokens.css` defining CSS custom properties for the colors found in the design reference. Do not change the structure.
+- [ ] Define CSS custom properties for the font family, font size, font line-height, and weight tokens found in the design reference.
+- [ ] Define CSS custom properties for border width tokens found in the design reference under Border.
+- [ ] Define CSS custom properties for corner radius tokens found in the design reference under Radius.
+- [ ] Define CSS custom properties for spacing tokens found in the design reference under Spacing.
+- [ ] Create empty CSS custom properties for 3 levels of Shadow tokens and ask me to define them.
+- [ ] Create empty CSS custom properties for 3 levels of Duration tokens and ask me to define them.
+- [ ] Define responsive breakpoints (`--bp-mobile`, `--bp-tablet`, `--bp-desktop`, `--bp-wide`) and document them.
+- [ ] Create `DESIGN-SYSTEM.md` documenting every token with its intended use.
+- [ ] Build `/src/design-system/preview.html` that renders a visual swatch sheet of all tokens.
 
 ---
 
@@ -39,22 +40,11 @@ By the end of this session: `tokens.css` is complete and committed, `DESIGN-SYST
 
 ## Design Reference
 
-Colors, typography, and spacing are sourced from the Figma file:
+Some of the colors, typography, and spacing are sourced from the Figma file:
 
-**[FOHA club website — Figma](https://www.figma.com/design/XsjKeeMALXqJLBywDkyqJL/FOHA-club-website?node-id=0-1&t=RrzEgV7DFOj9NmNO-1)**
+**[FOHA club website — Figma](https://www.figma.com/design/XsjKeeMALXqJLBywDkyqJL/FOHA-club-website?node-id=0-1&t=jgaHgO9LOqqJAklt-1)**
 
-Before writing any tokens, read the Figma file to extract:
-- Color palette (primary, secondary, accent, neutral scales)
-- Typography (font families, size scale, weights)
-- Spacing units and base scale
-
-Pause and ask if the Figma file does not clearly define any of these values.
-
----
-
-## Open Questions
-
-- **Spacing base unit:** Roadmap suggests 4px base — confirm against Figma before writing the scale.
+Pause and ask if any values in the Figma file are missing or ambiguous before writing those tokens.
 
 ---
 
@@ -69,10 +59,11 @@ Pause and ask if the Figma file does not clearly define any of these values.
 
 ## Definition of Done
 
-- [ ] `tokens.css` exists and covers all six token categories listed in the roadmap
-- [ ] `DESIGN-SYSTEM.md` documents every token with a plain-language description of its intended use
+- [ ] `tokens.css` exists and covers all token categories: color, typography, border, radius, spacing, shadow (empty), and duration (empty)
+- [ ] Shadow and duration tokens have been defined with my input
+- [ ] Responsive breakpoints are defined in `tokens.css`
+- [ ] `DESIGN-SYSTEM.md` documents every token with a plain-language description of its intended use, including breakpoints
 - [ ] `preview.html` renders a swatch sheet and loads without errors in the browser
-- [ ] Breakpoints are defined in `tokens.css` and documented in `DESIGN-SYSTEM.md`
 - [ ] `src/style.css` imports `tokens.css`
 - [ ] All Phase 1 tasks checked off in `ROADMAP.md`
 
