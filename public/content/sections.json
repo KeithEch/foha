@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "logo_image": "",
+    "hero_image": "",
+    "subhead": "A tabletop adventure of moral consequence and madness."
+  },
+  "about": {
+    "heading1": "A tabletop RPG of high adventure",
+    "stats": "System: Agnostic · Players: 4–6 · Level: 4–6 · Pages: 80 · Format: .pdf",
+    "heading2": "The Rot is a demented madhouse built upon cursed runes. It is filled with disfigured inmates, covered in fog, and concealing arcane secrets.",
+    "paragraph": "The warden of the Rot, an Archmage, has been using a powerful relic to conduct nefarious experiments upon the Rot’s inmates."
+  },
+  "overview": {
+    "heading1": "Overview"
+  },
+  "gallery": {
+    "heading1": "Gallery"
+  },
+  "prologue": {
+    "heading1": "Prologue",
+    "paragraph": "Prologue content placeholder."
+  },
+  "retail": {
+    "heading1": "Get Mad",
+    "links": [
+      { "name": "Example Store", "url": "https://example.com" }
+    ],
+    "paragraph": "Available at the following retailers."
+  }
+}

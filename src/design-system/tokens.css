@@ -76,6 +76,12 @@
   --color-bg-accent:         var(--primitive-brown-500);
   --color-bg-action-default: var(--primitive-black);
   --color-bg-action-hover:   var(--primitive-mud-800);
+  --color-bg-nav:            var(--primitive-beige-500);
+
+  /* ---------------------------------------------------
+     COLOR: Icon
+  --------------------------------------------------- */
+  --color-icon-default: var(--primitive-brorange-500);
 
   /* ---------------------------------------------------
      COLOR: Border

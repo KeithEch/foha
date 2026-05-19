@@ -89,6 +89,12 @@ Primitive colors are the raw palette. Do not use these in component styles — u
 | `--color-bg-accent` | `brown-500` `#3D2514` | Accent panels, highlighted areas |
 | `--color-bg-action-default` | `black` `#000000` | Button / interactive element background (default state) |
 | `--color-bg-action-hover` | `mud-800` `#1A1817` | Button / interactive element background (hover state) |
+| `--color-bg-nav` | `beige-500` `#E8CFA7` | Navigation bar background — warm parchment surface |
+
+### Icon
+| Token | Resolves to | Intended use |
+|---|---|---|
+| `--color-icon-default` | `brorange-500` `#685127` | Default icon / decorative accent colour — nav diamonds, list bullets |
 
 ### Border
 | Token | Resolves to | Intended use |
