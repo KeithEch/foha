@@ -17,8 +17,8 @@
 - [x] Initialize Git repository with a clear branching strategy (`main` = production, `dev` = working branch)
 - [x] Set up project scaffolding with a modern build tool (Vite recommended for its speed and simplicity)
 - [x] Configure `.gitignore`, `README.md`, and folder structure (`/src`, `/public`, `/cms`, `/dist`)
-- [ ] Add a basic `index.html` placeholder and confirm it deploys and renders correctly on Netlify
-- [ ] Document the deployment workflow in `README.md`
+- [x] Add a basic `index.html` placeholder and confirm it deploys and renders correctly on Netlify
+- [x] Document the deployment workflow in `README.md`
 
 ### Deliverables
 
@@ -34,16 +34,16 @@
 
 ### Tasks
 
-- [ ] Create `/src/design-system/tokens.css` defining CSS custom properties for:
+- [x] Create `/src/design-system/tokens.css` defining CSS custom properties for:
   - **Color:** Brand palette (primary, secondary, accent, neutral scales), semantic tokens (text, background, border, interactive states)
-  - **Typography:** Font families, size scale (e.g., `--text-xs` through `--text-4xl`), line-height, letter-spacing, weight tokens
-  - **Spacing:** A consistent scale (e.g., 4px base unit → `--space-1` through `--space-16`)
-  - **Borders & Radii:** Corner radius tokens, border width tokens
-  - **Shadows & Elevation:** Subtle shadow tokens for modals and cards
-  - **Animation:** Duration tokens (`--duration-fast`, `--duration-base`, `--duration-slow`), easing curves
-- [ ] Create `DESIGN-SYSTEM.md` documenting every token with its intended use — this is Claude Code's reference
-- [ ] Build a `/src/design-system/preview.html` page that renders a visual swatch sheet of all tokens (for QA and iteration)
-- [ ] Define responsive breakpoints (`--bp-mobile`, `--bp-tablet`, `--bp-desktop`, `--bp-wide`) and document them
+  - **Typography:** Font families, size scale (`--font-size-p1/menu/h2`), line-height, weight tokens
+  - **Spacing:** Pixel-named scale → `--space-4` through `--space-160`
+  - **Borders & Radii:** Corner radius tokens (`--radius-*`), border width tokens (`--border-*`)
+  - **Shadows & Elevation:** `--shadow-2` (low), `--shadow-3` (medium), `--shadow-4` (high)
+  - **Animation:** Duration tokens (`--duration-fast/medium/slow`); easing curves deferred to Phase 4
+- [x] Create `DESIGN-SYSTEM.md` documenting every token with its intended use — this is Claude Code's reference
+- [x] Build a `/src/design-system/preview.html` page that renders a visual swatch sheet of all tokens (for QA and iteration)
+- [x] Define responsive breakpoints (`--bp-mobile`, `--bp-tablet`, `--bp-desktop`, `--bp-wide`) and document them
 
 ### Deliverables
 
@@ -61,31 +61,31 @@
 
 #### HTML Skeleton
 
-- [ ] Build `index.html` with semantic HTML5 structure: `<header>`, `<main>`, `<section>` (one per content section, with IDs), `<footer>`
-- [ ] Link all CSS (design system tokens + global styles)
-- [ ] Set up section anchor IDs that match nav links: `#hero`, `#overview`, `#gallery`, `#prologue`, `#retail`, and a hidden easter egg section
+- [x] Build `index.html` with semantic HTML5 structure: `<header>`, `<main>`, `<section>` (one per content section, with IDs), `<footer>`
+- [x] Link all CSS (design system tokens + global styles)
+- [x] Set up section anchor IDs that match nav links: `#hero`, `#about`, `#overview`, `#gallery`, `#prologue`, `#retail`, and `#easter-egg` (2000px below footer)
 
 #### Navigation
 
-- [ ] Build a sticky top nav bar with logo and three anchor links
-- [ ] Implement smooth-scroll behavior via CSS (`scroll-behavior: smooth`) with a JS fallback
-- [ ] Add mobile hamburger menu for small viewports
-- [ ] Ensure nav is keyboard-navigable and screen-reader friendly
+- [x] Build a sticky top nav bar with logo and three anchor links
+- [x] Implement smooth-scroll behavior via CSS (`scroll-behavior: smooth`)
+- [x] Mobile nav per Figma node `81:24`: logo + Get Mad only (no hamburger)
+- [x] Ensure nav is keyboard-navigable and screen-reader friendly (`aria-label`, focus states)
 
 #### Modal System
 
-- [ ] Build a reusable full-screen modal component (HTML + CSS + JS)
-- [ ] Modal opens/closes via `aria-modal`, focus trapping, and ESC key dismissal
-- [ ] Accessible: correct `role`, `aria-labelledby`, focus management
-- [ ] Design system tokens used throughout
+- [x] Build a reusable full-screen modal component (HTML + CSS + JS)
+- [x] Modal opens/closes via `aria-modal`, focus trapping, and ESC key dismissal
+- [x] Accessible: correct `role`, `aria-labelledby`, focus management
+- [x] Design system tokens used throughout
 
 #### Decap CMS Setup
 
-- [ ] Add `admin/index.html` and `admin/config.yml` per Decap CMS documentation
-- [ ] Configure Git Gateway via Netlify Identity
-- [ ] Define content collections in `config.yml` for each editable text section (hero headline, overview body, prologue text, retail links, etc.)
-- [ ] Connect content fields to rendered HTML via a static site approach (templating or simple JS content loading from generated JSON/Markdown)
-- [ ] Test the CMS editorial workflow: log in → edit → publish → verify update on site
+- [x] Add `public/admin/index.html` and `public/admin/config.yml` per Decap CMS documentation
+- [ ] Configure Git Gateway via Netlify Identity *(manual — enable in Netlify dashboard)*
+- [x] Define content collections in `public/admin/config.yml` for all six sections with placeholder fields
+- [x] Connect content fields to rendered HTML via `src/js/load-content.js` fetching `/content/sections.json`
+- [ ] Test the CMS editorial workflow: log in → edit → publish → verify update on site *(manual verification required)*
 
 ### Deliverables
 
@@ -97,13 +97,15 @@
 
 ## Phase 3 — Sections & Content
 
-**Goal:** All page sections built, connected to CMS, and visually complete. Sections can be developed in parallel.
+**Goal:** All page sections built, connected to CMS, and visually based on Figma design reference. Sections can be developed in parallel.
+
+- [ ] Ask if any design system tokens have been changed. If yes, ask for latest token set exported from Figma. Update `tokens.css` and `DESIGN-SYSTEM.md`with any changes. If anything is unclear stop and ask for input.
 
 ### 3.1 — Hero Section
 
-- [ ] Full-viewport hero layout
-- [ ] Animated headline and/or graphic elements (placeholder for Phase 4 animation)
-- [ ] CMS-controlled: headline, subheadline, CTA text/link
+- [ ] hero layout based on design reference
+- [ ] Animated graphic elements (placeholder for Phase 4 animation)
+- [ ] CMS-controlled: subheadline, CTA text/link
 - [ ] Responsive from 320px to 2560px
 
 ### 3.2 — Overview Section

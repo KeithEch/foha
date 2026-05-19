@@ -1,0 +1,59 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: sections
+    label: Site Sections
+    files:
+      - name: sections
+        label: All Sections
+        file: public/content/sections.json
+        format: json
+        fields:
+          - name: hero
+            label: Hero
+            widget: object
+            fields:
+              - { name: logo_image, label: Logo Image, widget: image, required: false }
+              - { name: hero_image, label: Hero Image, widget: image, required: false }
+              - { name: subhead, label: Sub-head Text, widget: string }
+          - name: about
+            label: About
+            widget: object
+            fields:
+              - { name: heading1, label: Heading 1, widget: string }
+              - { name: stats, label: Stats Text, widget: string }
+              - { name: heading2, label: Heading 2, widget: string }
+              - { name: paragraph, label: Paragraph, widget: text }
+          - name: overview
+            label: Overview
+            widget: object
+            fields:
+              - { name: heading1, label: Heading 1, widget: string }
+          - name: gallery
+            label: Gallery
+            widget: object
+            fields:
+              - { name: heading1, label: Heading 1, widget: string }
+          - name: prologue
+            label: Prologue
+            widget: object
+            fields:
+              - { name: heading1, label: Heading 1, widget: string }
+              - { name: paragraph, label: Paragraph, widget: text }
+          - name: retail
+            label: Retail
+            widget: object
+            fields:
+              - { name: heading1, label: Heading 1, widget: string }
+              - name: links
+                label: Retail Links
+                widget: list
+                fields:
+                  - { name: name, label: Store Name, widget: string }
+                  - { name: url, label: URL, widget: string }
+              - { name: paragraph, label: Paragraph, widget: text }

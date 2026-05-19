@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOHA Design System — Token Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-family-base);
+      background: #f0ece4;
+      color: var(--primitive-mud-800);
+      padding: 48px 64px 96px;
+    }
+
+    /* --- Layout ---------------------------------------------------------- */
+    .preview-header {
+      border-bottom: 3px solid var(--primitive-mud-800);
+      padding-bottom: 24px;
+      margin-bottom: 64px;
+    }
+    .preview-header h1 {
+      font-size: var(--font-size-h2);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--line-height-h2);
+      margin-bottom: 6px;
+    }
+    .preview-header p {
+      font-size: var(--font-size-p1);
+      line-height: var(--line-height-p1);
+      color: var(--primitive-brorange-500);
+      font-family: monospace;
+      font-size: 13px;
+    }
+
+    section { margin-bottom: 72px; }
+
+    .section-title {
+      font-family: monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--primitive-brorange-500);
+      border-bottom: 1px solid var(--primitive-brown-500);
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+    }
+    .sub-title {
+      font-family: monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--primitive-neutral-500);
+      margin: 24px 0 12px;
+    }
+    .token-label {
+      font-family: monospace;
+      font-size: 10px;
+      color: var(--primitive-neutral-600);
+      line-height: 1.5;
+      margin-top: 6px;
+    }
+
+    /* --- Color swatches -------------------------------------------------- */
+    .swatch-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .swatch { width: 80px; }
+    .swatch-box {
+      width: 80px;
+      height: 56px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .semantic-group {
+      background: var(--primitive-neutral-100);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .semantic-group.on-dark { background: var(--primitive-mud-800); }
+    .semantic-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .semantic-row:last-child { margin-bottom: 0; }
+    .semantic-box {
+      width: 36px;
+      height: 28px;
+      border-radius: var(--radius-xs);
+      border: 1px solid rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+    .semantic-info { font-family: monospace; font-size: 11px; }
+    .semantic-info span { display: block; color: var(--primitive-neutral-500); }
+    .semantic-group.on-dark .semantic-info { color: var(--primitive-beige-500); }
+    .semantic-group.on-dark .semantic-info span { color: var(--primitive-neutral-500); }
+
+    /* --- Typography ------------------------------------------------------ */
+    .type-sample {
+      display: flex;
+      align-items: baseline;
+      gap: 32px;
+      padding: 20px 24px;
+      border: 1px solid var(--primitive-neutral-200);
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+    }
+    .type-meta {
+      font-family: monospace;
+      font-size: 10px;
+      color: var(--primitive-neutral-500);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* --- Spacing --------------------------------------------------------- */
+    .space-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 6px;
+    }
+    .space-name {
+      font-family: monospace;
+      font-size: 10px;
+      color: var(--primitive-neutral-600);
+      width: 130px;
+      flex-shrink: 0;
+    }
+    .space-bar {
+      height: 16px;
+      background: var(--primitive-brorange-500);
+      border-radius: 2px;
+      min-width: 1px;
+    }
+
+    /* --- Border width ---------------------------------------------------- */
+    .border-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+    .border-sample {
+      width: 200px;
+      border-style: solid;
+      border-color: var(--primitive-mud-800);
+    }
+
+    /* --- Radius ---------------------------------------------------------- */
+    .radius-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: flex-end;
+    }
+    .radius-item { text-align: center; }
+    .radius-box {
+      width: 64px;
+      height: 64px;
+      background: var(--primitive-mud-800);
+      margin-bottom: 6px;
+    }
+
+    /* --- Shadow ---------------------------------------------------------- */
+    .shadow-grid {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+    .shadow-item { text-align: center; }
+    .shadow-box {
+      width: 120px;
+      height: 72px;
+      background: var(--primitive-beige-100);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+    }
+
+    /* --- Duration -------------------------------------------------------- */
+    .duration-grid {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .duration-item { text-align: center; }
+    .duration-box {
+      width: 80px;
+      height: 80px;
+      background: var(--primitive-mud-800);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    .duration-box:hover { background: var(--primitive-yellorange-600); }
+    .dur-fast   { transition: background var(--duration-fast);   }
+    .dur-medium { transition: background var(--duration-medium); }
+    .dur-slow   { transition: background var(--duration-slow);   }
+
+    /* --- Breakpoints ----------------------------------------------------- */
+    .bp-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .bp-track {
+      height: 8px;
+      width: 400px;
+      background: var(--primitive-neutral-200);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .bp-fill {
+      height: 100%;
+      background: var(--primitive-mud-800);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="preview-header">
+    <h1>FOHA Design System</h1>
+    <p>Token preview — src/design-system/tokens.css</p>
+  </header>
+
+  <!-- ================================================================
+       COLORS — PRIMITIVES
+  ================================================================= -->
+  <section>
+    <h2 class="section-title">Color — Primitives</h2>
+
+    <p class="sub-title">Black &amp; White</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-box" style="background:#000000;"></div>
+        <div class="token-label">--primitive-black<br>#000000</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-box" style="background:#FFFFFF;"></div>
+        <div class="token-label">--primitive-white<br>#FFFFFF</div>
+      </div>
+    </div>
+
+    <p class="sub-title">Purple</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-box" style="background:#BE5FB1;"></div>
+        <div class="token-label">purple-500<br>#BE5FB1</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-box" style="background:#BE17A8;"></div>
+        <div class="token-label">purple-900<br>#BE17A8</div>
+      </div>
+    </div>
+
+    <p class="sub-title">Yellorange</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-box" style="background:#FFD608;"></div>
+        <div class="token-label">yellorange-400<br>#FFD608</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-box" style="background:#FFCC00;"></div>
+        <div class="token-label">yellorange-500<br>#FFCC00</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-box" style="background:#FFBB00;"></div>
+        <div class="token-label">yellorange-600<br>#FFBB00</div>
+      </div>
+    </div>
+
+    <p class="sub-title">Mud</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-box" style="background:#201E1D;"></div>
+        <div class="token-label">mud-700<br>#201E1D</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-box" style="background:#1A1817;"></div>
+        <div class="token-label">mud-800<br>#1A1817</div>
+      </div>
+    </div>
+
+    <p class="sub-title">Neutral</p>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-box" style="background:#F2F2F2;"></div><div class="token-label">neutral-100<br>#F2F2F2</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#E5E5E5;"></div><div class="token-label">neutral-150<br>#E5E5E5</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#CCCCCC;"></div><div class="token-label">neutral-200<br>#CCCCCC</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#B2B2B2;"></div><div class="token-label">neutral-300<br>#B2B2B2</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#999999;"></div><div class="token-label">neutral-400<br>#999999</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#808080;"></div><div class="token-label">neutral-500<br>#808080</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#666666;"></div><div class="token-label">neutral-600<br>#666666</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#4D4D4D;"></div><div class="token-label">neutral-700<br>#4D4D4D</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#333333;"></div><div class="token-label">neutral-800<br>#333333</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#262626;"></div><div class="token-label">neutral-850<br>#262626</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#1A1A1A;"></div><div class="token-label">neutral-900<br>#1A1A1A</div></div>
+    </div>
+
+    <p class="sub-title">Brown · Brorange · Beige</p>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-box" style="background:#3D2514;"></div><div class="token-label">brown-500<br>#3D2514</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#1F160F;"></div><div class="token-label">brown-800<br>#1F160F</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#685127;"></div><div class="token-label">brorange-500<br>#685127</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#F2EEE6;"></div><div class="token-label">beige-100<br>#F2EEE6</div></div>
+      <div class="swatch"><div class="swatch-box" style="background:#E8CFA7;"></div><div class="token-label">beige-500<br>#E8CFA7</div></div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       COLORS — SEMANTIC
+  ================================================================= -->
+  <section>
+    <h2 class="section-title">Color — Semantic</h2>
+
+    <p class="sub-title">Background</p>
+    <div class="semantic-group">
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-bg-default);"></div><div class="semantic-info">--color-bg-default<span>mud-800 · #1A1817</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-bg-subtle);"></div><div class="semantic-info">--color-bg-subtle<span>black · #000000</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-bg-divider);"></div><div class="semantic-info">--color-bg-divider<span>brown-800 · #1F160F</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-bg-accent);"></div><div class="semantic-info">--color-bg-accent<span>brown-500 · #3D2514</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-bg-action-default);"></div><div class="semantic-info">--color-bg-action-default<span>black · #000000</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-bg-action-hover);"></div><div class="semantic-info">--color-bg-action-hover<span>mud-800 · #1A1817</span></div></div>
+    </div>
+
+    <p class="sub-title">Border</p>
+    <div class="semantic-group">
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-strong);"></div><div class="semantic-info">--color-border-strong<span>yellorange-600 · #FFBB00</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-default-on-light);"></div><div class="semantic-info">--color-border-default-on-light<span>brown-500 · #3D2514</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-default-on-dark);"></div><div class="semantic-info">--color-border-default-on-dark<span>beige-500 · #E8CFA7</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-action-primary-default);"></div><div class="semantic-info">--color-border-action-primary-default<span>purple-900 · #BE17A8</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-action-primary-hover);"></div><div class="semantic-info">--color-border-action-primary-hover<span>purple-900 · #BE17A8</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-action-secondary-default);"></div><div class="semantic-info">--color-border-action-secondary-default<span>yellorange-600 · #FFBB00</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-action-secondary-hover);"></div><div class="semantic-info">--color-border-action-secondary-hover<span>yellorange-600 · #FFBB00</span></div></div>
+    </div>
+
+    <p class="sub-title">Text — on light</p>
+    <div class="semantic-group">
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-text-paragraph-on-light);"></div><div class="semantic-info">--color-text-paragraph-on-light<span>mud-700 · #201E1D</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-text-heading-on-light);"></div><div class="semantic-info">--color-text-heading-on-light<span>mud-800 · #1A1817</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-text-link-default);"></div><div class="semantic-info">--color-text-link-default<span>purple-900 · #BE17A8</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-text-link-hover);"></div><div class="semantic-info">--color-text-link-hover<span>purple-500 · #BE5FB1</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-text-menu-default);"></div><div class="semantic-info">--color-text-menu-default<span>mud-800 · #1A1817</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-text-menu-hover);"></div><div class="semantic-info">--color-text-menu-hover<span>black · #000000</span></div></div>
+    </div>
+
+    <p class="sub-title">Text — on dark</p>
+    <div class="semantic-group on-dark">
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-text-paragraph-on-dark);border-color:rgba(255,255,255,0.1);"></div><div class="semantic-info">--color-text-paragraph-on-dark<span>beige-100 · #F2EEE6</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-text-heading-on-dark);border-color:rgba(255,255,255,0.1);"></div><div class="semantic-info">--color-text-heading-on-dark<span>beige-500 · #E8CFA7</span></div></div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       TYPOGRAPHY
+  ================================================================= -->
+  <section>
+    <h2 class="section-title">Typography — Alegreya</h2>
+
+    <div class="type-sample">
+      <div style="font-size:var(--font-size-h2);font-weight:var(--font-weight-regular);line-height:var(--line-height-h2);">The Rot of Madness</div>
+      <div class="type-meta">h2<br>32px · Regular (400)<br>line-height 36px<br>--font-size-h2</div>
+    </div>
+
+    <div class="type-sample">
+      <div style="font-size:var(--font-size-menu);font-weight:var(--font-weight-medium);line-height:var(--line-height-menu);">Overview</div>
+      <div class="type-meta">menu · menu-hover<br>24px · Medium (500)<br>line-height 24px<br>--font-size-menu</div>
+    </div>
+
+    <div class="type-sample">
+      <div style="font-size:var(--font-size-p1);font-weight:var(--font-weight-regular);line-height:var(--line-height-p1);max-width:500px;">A tabletop RPG of high adventure filled with disfigured inmates, covered in fog, and concealing arcane secrets.</div>
+      <div class="type-meta">p1<br>18px · Regular (400)<br>line-height 24px<br>--font-size-p1</div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SPACING
+  ================================================================= -->
+  <section>
+    <h2 class="section-title">Spacing</h2>
+    <div class="space-row"><div class="space-name">--space-4 (4px)</div><div class="space-bar" style="width:4px;"></div></div>
+    <div class="space-row"><div class="space-name">--space-8 (8px)</div><div class="space-bar" style="width:8px;"></div></div>
+    <div class="space-row"><div class="space-name">--space-12 (12px)</div><div class="space-bar" style="width:12px;"></div></div>
+    <div class="space-row"><div class="space-name">--space-16 (16px)</div><div class="space-bar" style="width:16px;"></div></div>
+    <div class="space-row"><div class="space-name">--space-20 (20px)</div><div class="space-bar" style="width:20px;"></div></div>
+    <div class="space-row"><div class="space-name">--space-24 (24px)</div><div class="space-bar" style="width:24px;"></div></div>
+    <div class="space-row"><div class="space-name">--space-32 (32px)</div><div class="space-bar" style="width:32px;"></div></div>
+    <div class="space-row"><div class="space-name">--space-40 (40px)</div><div class="space-bar" style="width:40px;"></div></div>
+    <div class="space-row"><div class="space-name">--space-56 (56px)</div><div class="space-bar" style="width:56px;"></div></div>
+    <div class="space-row"><div class="space-name">--space-72 (72px)</div><div class="space-bar" style="width:72px;"></div></div>
+    <div class="space-row"><div class="space-name">--space-100 (100px)</div><div class="space-bar" style="width:100px;"></div></div>
+    <div class="space-row"><div class="space-name">--space-160 (160px)</div><div class="space-bar" style="width:160px;"></div></div>
+  </section>
+
+  <!-- ================================================================
+       BORDER WIDTH
+  ================================================================= -->
+  <section>
+    <h2 class="section-title">Border Width</h2>
+    <div class="border-row"><div class="space-name">--border-none (0px)</div><div class="border-sample" style="border-width:0;height:4px;background:var(--primitive-neutral-200);"></div></div>
+    <div class="border-row"><div class="space-name">--border-xs (1px)</div><div class="border-sample" style="border-width:1px;"></div></div>
+    <div class="border-row"><div class="space-name">--border-sm (2px)</div><div class="border-sample" style="border-width:2px;"></div></div>
+    <div class="border-row"><div class="space-name">--border-md (4px)</div><div class="border-sample" style="border-width:4px;"></div></div>
+  </section>
+
+  <!-- ================================================================
+       BORDER RADIUS
+  ================================================================= -->
+  <section>
+    <h2 class="section-title">Border Radius</h2>
+    <div class="radius-grid">
+      <div class="radius-item"><div class="radius-box" style="border-radius:0px;"></div><div class="token-label">--radius-none<br>0px</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:2px;"></div><div class="token-label">--radius-xs<br>2px</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:4px;"></div><div class="token-label">--radius-sm<br>4px</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:6px;"></div><div class="token-label">--radius-md<br>6px</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:8px;"></div><div class="token-label">--radius-lg<br>8px</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:12px;"></div><div class="token-label">--radius-xl<br>12px</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:16px;"></div><div class="token-label">--radius-xxl<br>16px</div></div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SHADOW
+  ================================================================= -->
+  <section>
+    <h2 class="section-title">Shadow</h2>
+    <div class="shadow-grid">
+      <div class="shadow-item">
+        <div class="shadow-box" style="box-shadow:var(--shadow-1);"></div>
+        <div class="token-label">--shadow-1<br>Low elevation</div>
+      </div>
+      <div class="shadow-item">
+        <div class="shadow-box" style="box-shadow:var(--shadow-2);"></div>
+        <div class="token-label">--shadow-2<br>Medium elevation</div>
+      </div>
+      <div class="shadow-item">
+        <div class="shadow-box" style="box-shadow:var(--shadow-3);"></div>
+        <div class="token-label">--shadow-3<br>High elevation</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       DURATION
+  ================================================================= -->
+  <section>
+    <h2 class="section-title">Duration — hover each box to compare</h2>
+    <div class="duration-grid">
+      <div class="duration-item">
+        <div class="duration-box dur-fast"></div>
+        <div class="token-label">--duration-fast<br>150ms</div>
+      </div>
+      <div class="duration-item">
+        <div class="duration-box dur-medium"></div>
+        <div class="token-label">--duration-medium<br>300ms</div>
+      </div>
+      <div class="duration-item">
+        <div class="duration-box dur-slow"></div>
+        <div class="token-label">--duration-slow<br>600ms</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       BREAKPOINTS
+  ================================================================= -->
+  <section>
+    <h2 class="section-title">Breakpoints</h2>
+    <div class="bp-row">
+      <div class="space-name">--bp-mobile<br>375px</div>
+      <div class="bp-track"><div class="bp-fill" style="width:calc(375 / 1440 * 100%);"></div></div>
+    </div>
+    <div class="bp-row">
+      <div class="space-name">--bp-tablet<br>768px</div>
+      <div class="bp-track"><div class="bp-fill" style="width:calc(768 / 1440 * 100%);"></div></div>
+    </div>
+    <div class="bp-row">
+      <div class="space-name">--bp-desktop<br>1024px</div>
+      <div class="bp-track"><div class="bp-fill" style="width:calc(1024 / 1440 * 100%);"></div></div>
+    </div>
+    <div class="bp-row">
+      <div class="space-name">--bp-wide<br>1440px</div>
+      <div class="bp-track"><div class="bp-fill" style="width:100%;"></div></div>
+    </div>
+    <p style="font-family:monospace;font-size:11px;color:var(--primitive-neutral-500);margin-top:16px;">
+      Note: CSS custom properties cannot be used inside @media conditions.<br>
+      Hardcode these values in media query rules and cite the token name in a comment.
+    </p>
+  </section>
+
+</body>
+</html>

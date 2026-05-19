@@ -8,7 +8,7 @@
 
 ## Key Constraints
 
-- **Hosting:** DreamHost (Apache). All server config goes in `.htaccess`.
+- **Hosting:** Netlify (auto-deploy from GitHub `main`). Server config goes in `netlify.toml`. Hosting solution may change — avoid host-specific dependencies where possible.
 - **CMS:** Decap CMS (git-based). All editable text must be wired to a CMS field defined in `admin/config.yml`.
 - Every CSS animation must have a `@media (prefers-reduced-motion: reduce)` fallback — no exceptions.
 - All code must be modern, semantic, and accessible (WCAG AA minimum).

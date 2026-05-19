@@ -1,11 +1,11 @@
 # foha
 
-Single-page website hosted on DreamHost with Decap CMS.
+Single-page website hosted on Netlify with Decap CMS.
 
 ## Stack
 
 - **Build tool:** Vite (vanilla HTML/CSS/JS)
-- **Hosting:** DreamHost (Apache)
+- **Hosting:** Netlify (auto-deploy from GitHub `main`)
 - **CMS:** Decap CMS (git-based)
 
 ## Folder Structure
@@ -39,17 +39,34 @@ npm run dev
 npm run build
 ```
 
-Output goes to `/dist`. Deploy contents of `/dist` to DreamHost.
+Output goes to `/dist`. Netlify runs this build command automatically on every push to `main`.
 
 ## Deployment
 
-_Deployment workflow to be documented after DreamHost configuration (Phase 0, Task 4)._
+This project deploys automatically via Netlify on every push to the `main` branch. No manual deploy steps are required.
+
+### How it works
+
+1. Work is done on the `dev` branch
+2. When ready to go live, merge `dev` → `main`
+3. Netlify detects the push to `main` and triggers a build (`npm run build`)
+4. Netlify serves the contents of `/dist` at **https://foha.netlify.app/**
+5. HTTPS is provisioned automatically by Netlify
+
+### Netlify configuration
+
+| Setting | Value |
+|---------|-------|
+| Build command | `npm run build` |
+| Publish directory | `dist` |
+| Production branch | `main` |
+| Site URL | https://foha.netlify.app/ |
 
 ## Branching Strategy
 
 | Branch | Purpose |
 |--------|---------|
-| `main` | Production — deploys to DreamHost |
+| `main` | Production — auto-deploys to Netlify |
 | `dev`  | Active development — all work happens here |
 
-Merge `dev` → `main` triggers a deploy (pipeline configured in Phase 0).
+Merge `dev` → `main` to trigger a production deploy.
