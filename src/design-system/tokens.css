@@ -1,0 +1,185 @@
+/* =====================================================
+   FOHA Design System — tokens.css
+   Source: Mode 1.tokens.json + Figma (node 42:13)
+   ===================================================== */
+
+:root {
+
+  /* ---------------------------------------------------
+     PRIMITIVE: Numbers
+     Raw pixel scale — referenced by spacing, border,
+     and radius tokens. Do not use directly in components.
+  --------------------------------------------------- */
+  --primitive-0:   0px;
+  --primitive-1:   1px;
+  --primitive-2:   2px;
+  --primitive-4:   4px;
+  --primitive-6:   6px;
+  --primitive-8:   8px;
+  --primitive-12:  12px;
+  --primitive-16:  16px;
+  --primitive-20:  20px;
+  --primitive-24:  24px;
+  --primitive-32:  32px;
+  --primitive-40:  40px;
+  --primitive-48:  48px;
+  --primitive-56:  56px;
+  --primitive-64:  64px;
+  --primitive-72:  72px;
+  --primitive-80:  80px;
+  --primitive-100: 100px;
+  --primitive-120: 120px;
+  --primitive-160: 160px;
+
+  /* ---------------------------------------------------
+     PRIMITIVE: Colors
+     Raw palette — referenced by semantic color tokens.
+     Do not use directly in components.
+  --------------------------------------------------- */
+  --primitive-black: #000000;
+  --primitive-white: #FFFFFF;
+
+  --primitive-purple-500: #BE5FB1;
+  --primitive-purple-900: #BE17A8;
+
+  --primitive-yellorange-400: #FFD608;
+  --primitive-yellorange-500: #FFCC00;
+  --primitive-yellorange-600: #FFBB00;
+
+  --primitive-mud-700: #201E1D;
+  --primitive-mud-800: #1A1817;
+
+  --primitive-neutral-100: #F2F2F2;
+  --primitive-neutral-150: #E5E5E5;
+  --primitive-neutral-200: #CCCCCC;
+  --primitive-neutral-300: #B2B2B2;
+  --primitive-neutral-400: #999999;
+  --primitive-neutral-500: #808080;
+  --primitive-neutral-600: #666666;
+  --primitive-neutral-700: #4D4D4D;
+  --primitive-neutral-800: #333333;
+  --primitive-neutral-850: #262626;
+  --primitive-neutral-900: #1A1A1A;
+
+  --primitive-brown-500:   #3D2514;
+  --primitive-brown-800:   #1F160F;
+  --primitive-brorange-500: #685127;
+  --primitive-beige-100:   #F2EEE6;
+  --primitive-beige-500:   #E8CFA7;
+
+  /* ---------------------------------------------------
+     COLOR: Background
+  --------------------------------------------------- */
+  --color-bg-default:        var(--primitive-mud-800);
+  --color-bg-subtle:         var(--primitive-black);
+  --color-bg-divider:        var(--primitive-brown-800);
+  --color-bg-accent:         var(--primitive-brown-500);
+  --color-bg-action-default: var(--primitive-black);
+  --color-bg-action-hover:   var(--primitive-mud-800);
+
+  /* ---------------------------------------------------
+     COLOR: Border
+  --------------------------------------------------- */
+  --color-border-strong:                    var(--primitive-yellorange-600);
+  --color-border-default-on-light:          var(--primitive-brown-500);
+  --color-border-default-on-dark:           var(--primitive-beige-500);
+  --color-border-action-primary-default:    var(--primitive-purple-900);
+  --color-border-action-primary-hover:      var(--primitive-purple-900);
+  --color-border-action-secondary-default:  var(--primitive-yellorange-600);
+  --color-border-action-secondary-hover:    var(--primitive-yellorange-600);
+
+  /* ---------------------------------------------------
+     COLOR: Text
+  --------------------------------------------------- */
+  --color-text-paragraph-on-light: var(--primitive-mud-700);
+  --color-text-paragraph-on-dark:  var(--primitive-beige-100);
+  --color-text-heading-on-light:   var(--primitive-mud-800);
+  --color-text-heading-on-dark:    var(--primitive-beige-500);
+  --color-text-link-default:       var(--primitive-purple-900);
+  --color-text-link-hover:         var(--primitive-purple-500);
+  --color-text-menu-default:       var(--primitive-mud-800);
+  --color-text-menu-hover:         var(--primitive-black);
+
+  /* ---------------------------------------------------
+     TYPOGRAPHY
+     Font family: Alegreya (serif)
+     Import via Google Fonts — add to style.css:
+       @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500&display=swap');
+  --------------------------------------------------- */
+  --font-family-base: 'Alegreya', serif;
+
+  --font-size-p1:   18px;
+  --font-size-menu: 24px;
+  --font-size-h2:   32px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium:  500;
+
+  --line-height-p1:   24px;
+  --line-height-menu: 24px;
+  --line-height-h2:   36px;
+
+  /* ---------------------------------------------------
+     SPACING
+     Pixel values from the Spacing token group.
+  --------------------------------------------------- */
+  --space-4:   var(--primitive-4);
+  --space-8:   var(--primitive-8);
+  --space-12:  var(--primitive-12);
+  --space-16:  var(--primitive-16);
+  --space-20:  var(--primitive-20);
+  --space-24:  var(--primitive-24);
+  --space-32:  var(--primitive-32);
+  --space-40:  var(--primitive-40);
+  --space-56:  var(--primitive-56);
+  --space-72:  var(--primitive-72);
+  --space-100: var(--primitive-100);
+  --space-160: var(--primitive-160);
+
+  /* ---------------------------------------------------
+     BORDER WIDTH
+  --------------------------------------------------- */
+  --border-none: var(--primitive-0);
+  --border-xs:   var(--primitive-1);
+  --border-sm:   var(--primitive-2);
+  --border-md:   var(--primitive-4);
+
+  /* ---------------------------------------------------
+     BORDER RADIUS
+  --------------------------------------------------- */
+  --radius-none: var(--primitive-0);
+  --radius-xs:   var(--primitive-2);
+  --radius-sm:   var(--primitive-4);
+  --radius-md:   var(--primitive-6);
+  --radius-lg:   var(--primitive-8);
+  --radius-xl:   var(--primitive-12);
+  --radius-xxl:  var(--primitive-16);
+
+  /* ---------------------------------------------------
+     SHADOW
+     Level 1 = low elevation, Level 3 = high elevation
+  --------------------------------------------------- */
+  --shadow-1: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  --shadow-2: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+  --shadow-3: 0 11px 7px 0 rgba(0, 0, 0, 0.19), 0 13px 25px 0 rgba(0, 0, 0, 0.3);
+
+  /* ---------------------------------------------------
+     DURATION
+  --------------------------------------------------- */
+  --duration-fast:   150ms;
+  --duration-medium: 300ms;
+  --duration-slow:   600ms;
+
+  /* ---------------------------------------------------
+     BREAKPOINTS
+     Reference values for @media queries.
+     CSS custom properties cannot be used directly inside
+     @media conditions — hardcode these values in rules
+     and cite these tokens as the canonical reference.
+  --------------------------------------------------- */
+  --bp-mobile:  375px;
+  --bp-tablet:  768px;
+  --bp-desktop: 1024px;
+  --bp-wide:    1440px;
+
+}

@@ -42,4 +42,5 @@ When you say to close:
 
 - Write a session log at `sessions/NNN-log.md` (use `template-session-log.md` as the format reference).
 - Update the completed sessions index in `sessions/index.md`.
-- Commit all changed files on the current branch. Do not push.
+- Commit all changed files on the current branch.
+- Push the branch to `origin/dev`.

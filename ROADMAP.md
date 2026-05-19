@@ -34,16 +34,16 @@
 
 ### Tasks
 
-- [ ] Create `/src/design-system/tokens.css` defining CSS custom properties for:
+- [x] Create `/src/design-system/tokens.css` defining CSS custom properties for:
   - **Color:** Brand palette (primary, secondary, accent, neutral scales), semantic tokens (text, background, border, interactive states)
-  - **Typography:** Font families, size scale (e.g., `--text-xs` through `--text-4xl`), line-height, letter-spacing, weight tokens
-  - **Spacing:** A consistent scale (e.g., 4px base unit → `--space-1` through `--space-16`)
-  - **Borders & Radii:** Corner radius tokens, border width tokens
-  - **Shadows & Elevation:** Subtle shadow tokens for modals and cards
-  - **Animation:** Duration tokens (`--duration-fast`, `--duration-base`, `--duration-slow`), easing curves
-- [ ] Create `DESIGN-SYSTEM.md` documenting every token with its intended use — this is Claude Code's reference
-- [ ] Build a `/src/design-system/preview.html` page that renders a visual swatch sheet of all tokens (for QA and iteration)
-- [ ] Define responsive breakpoints (`--bp-mobile`, `--bp-tablet`, `--bp-desktop`, `--bp-wide`) and document them
+  - **Typography:** Font families, size scale (`--font-size-p1/menu/h2`), line-height, weight tokens
+  - **Spacing:** Pixel-named scale → `--space-4` through `--space-160`
+  - **Borders & Radii:** Corner radius tokens (`--radius-*`), border width tokens (`--border-*`)
+  - **Shadows & Elevation:** `--shadow-2` (low), `--shadow-3` (medium), `--shadow-4` (high)
+  - **Animation:** Duration tokens (`--duration-fast/medium/slow`); easing curves deferred to Phase 4
+- [x] Create `DESIGN-SYSTEM.md` documenting every token with its intended use — this is Claude Code's reference
+- [x] Build a `/src/design-system/preview.html` page that renders a visual swatch sheet of all tokens (for QA and iteration)
+- [x] Define responsive breakpoints (`--bp-mobile`, `--bp-tablet`, `--bp-desktop`, `--bp-wide`) and document them
 
 ### Deliverables
 

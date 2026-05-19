@@ -14,7 +14,7 @@ By the end of this session: `tokens.css` is complete and committed, `DESIGN-SYST
 
 ## Tasks
 
-- [ ] Import the foha DS variable collection from the Figma file referenced in the Design Reference section.
+- [ ] Ask me to upload the foha DS collection as a JSON file
 - [ ] Create `/src/design-system/tokens.css` defining CSS custom properties for the colors found in the design reference. Do not change the structure.
 - [ ] Define CSS custom properties for the font family, font size, font line-height, and weight tokens found in the design reference.
 - [ ] Define CSS custom properties for border width tokens found in the design reference under Border.
@@ -44,7 +44,9 @@ Some of the colors, typography, and spacing are sourced from the Figma file:
 
 **[FOHA club website — Figma](https://www.figma.com/design/XsjKeeMALXqJLBywDkyqJL/FOHA-club-website?node-id=0-1&t=jgaHgO9LOqqJAklt-1)**
 
-Pause and ask if any values in the Figma file are missing or ambiguous before writing those tokens.
+Other tokens will be in an uploaded JSON file
+
+Pause and ask if any values in the Figma or JSON files are missing or ambiguous before writing those tokens.
 
 ---
 

@@ -1,4 +1,6 @@
-/* Global styles — design system tokens will be added in Phase 1 */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500&display=swap');
+@import './design-system/tokens.css';
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -6,9 +8,8 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: var(--font-family-base);
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: var(--color-bg-default);
+  color: var(--color-text-paragraph-on-dark);
 }
