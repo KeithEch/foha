@@ -82,10 +82,10 @@
 #### Decap CMS Setup
 
 - [x] Add `public/admin/index.html` and `public/admin/config.yml` per Decap CMS documentation
-- [ ] Configure Git Gateway via Netlify Identity *(manual — enable in Netlify dashboard)*
+- [x] Configure Git Gateway via Netlify Identity *(manual — enable in Netlify dashboard)*
 - [x] Define content collections in `public/admin/config.yml` for all six sections with placeholder fields
 - [x] Connect content fields to rendered HTML via `src/js/load-content.js` fetching `/content/sections.json`
-- [ ] Test the CMS editorial workflow: log in → edit → publish → verify update on site *(manual verification required)*
+- [x] Test the CMS editorial workflow: log in → edit → publish → verify update on site *(manual verification required)*
 
 ### Deliverables
 
@@ -100,48 +100,57 @@
 **Goal:** All page sections built, connected to CMS, and visually based on Figma design reference. Sections can be developed in parallel.
 
 - [ ] Ask if any design system tokens have been changed. If yes, ask for latest token set exported from Figma. Update `tokens.css` and `DESIGN-SYSTEM.md`with any changes. If anything is unclear stop and ask for input.
+- [ ] Make all sections responsive from 320px to 2560px
 
 ### 3.1 — Hero Section
 
 - [ ] hero layout based on design reference
 - [ ] Animated graphic elements (placeholder for Phase 4 animation)
-- [ ] CMS-controlled: subheadline, CTA text/link
-- [ ] Responsive from 320px to 2560px
+- [ ] CMS-controlled graphic elements
 
-### 3.2 — Overview Section
+### 3.2 — About Section
 
 - [ ] Text-driven section with CMS-controlled body copy
 - [ ] Support for a link that opens the modal window
 
-### 3.3 — Image Gallery
+### 3.3 — Overview Section
 
-- [ ] Responsive grid or masonry layout
+- [ ] Left column displaying image and text controlled by CMS
+- [ ] Right column displaying image
+
+### 3.4 — Image Gallery
+
+- [ ] Responsive grid or masonry layout with horizontal scroll
 - [ ] Lightbox or full-screen modal on image click
 - [ ] Images sourced from `/public/images/` or CMS media uploads
 - [ ] Lazy loading for performance
 
-### 3.4 — Prologue Section
+### 3.5 — Prologue Section
 
-- [ ] Long-form or stylized text section
+- [ ] Stylized text section
 - [ ] CMS-controlled content
-- [ ] Modal link integration
 
-### 3.5 — Retail Section
+### 3.6 — Retail Section
 
 - [ ] Grid/list of external retail store links
-- [ ] Each entry: store name, optional logo/icon, CTA link (opens in new tab with `rel="noopener noreferrer"`)
+- [ ] Each entry: store logo/icon link (opens in new tab with `rel="noopener noreferrer"`)
 - [ ] CMS-controlled: store name, URL, optional description
 - [ ] Clear visual treatment distinguishing this as an outbound-link section
 
-### 3.6 — Easter Egg Section
+### 3.7 — Footer Section
 
-- [ ] Hidden from main navigation and standard page flow
-- [ ] Triggered by a specific user interaction (e.g., Konami code, a hidden link, or a specific click sequence — to be defined)
-- [ ] Document the trigger mechanism in the repo
+- [ ] displays logo image
+- [ ] legal text
+
+### 3.8 — Easter Egg Section
+
+- [ ] Hidden from main navigation. 
+- [ ] Triggered by scrolling past the footer.
+
 
 ### Deliverables
 
-- All 6 sections rendered and CMS-connected
+- All 7 sections rendered and CMS-connected
 - All modal links functional
 - Retail section links tested
 
@@ -183,6 +192,70 @@
 - [ ] Open/close animations for the full-screen modal (fade + scale)
 - [ ] Fallback: instant show/hide with no transition
 
+### 4.6 — Scroll-Lock (Easter Egg Gateway)
+
+**Goal:** When the user scrolls to the footer, pause scrolling for 1.5 seconds, then release.
+
+#### Implementation
+
+**HTML marker (added in Phase 3):**
+```html
+<footer id="footer" class="footer" data-scroll-lock="true">
+  <!-- footer content -->
+</footer>
+```
+
+**JavaScript (Phase 4):**
+
+```javascript
+// Detect when user scrolls to the bottom of the footer and lock scroll
+const footerElement = document.getElementById('footer');
+let isScrollLocked = false;
+
+function lockScrollAtFooter() {
+  if (isScrollLocked) return;
+  
+  const footerRect = footerElement.getBoundingClientRect();
+  const viewportHeight = window.innerHeight;
+  
+  // Check if footer is in viewport and user is scrolling down
+  if (footerRect.top < viewportHeight && footerRect.top > 0) {
+    isScrollLocked = true;
+    
+    // Prevent scroll
+    document.body.style.overflow = 'hidden';
+    
+    // Release after 1.5 seconds
+    setTimeout(() => {
+      document.body.style.overflow = 'auto';
+      isScrollLocked = false;
+    }, 1500);
+  }
+}
+
+window.addEventListener('scroll', lockScrollAtFooter, { passive: false });
+```
+
+**CSS fallback (for prefers-reduced-motion):**
+```css
+@media (prefers-reduced-motion: reduce) {
+  /* No scroll lock when motion is reduced */
+  /* User can scroll freely; Easter Egg is still discoverable */
+}
+```
+
+**Testing:**
+- [ ] Scroll down to footer; verify scroll locks for exactly 1.5 seconds
+- [ ] After 1.5 seconds, scroll continues smoothly to Easter Egg
+- [ ] Test on mobile (ensure touch scroll behavior is handled)
+- [ ] Verify `prefers-reduced-motion: reduce` disables the lock
+- [ ] No console errors or janky behavior
+
+#### UX Considerations
+
+- **Accessibility:** The scroll lock should not break keyboard navigation; test Tab key and arrow keys
+- **Mobile:** Touch scroll may behave differently; test on real devices
+
 ### Deliverables
 
 - All animation types implemented
@@ -193,7 +266,7 @@
 
 ## Phase 5 — Responsive, Testing & Launch
 
-**Goal:** A fully QA'd, performant, accessible site deployed to DreamHost production.
+**Goal:** A fully QA'd, performant, accessible site deployed to Main on GitHub.
 
 ### 5.1 — Responsive QA
 

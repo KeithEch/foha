@@ -1,39 +1,81 @@
 # 004. Sections & Content
 
-This session builds all six page sections with visual layouts from Figma, connects each to the CMS, and establishes the parchment page background, advancing Phase 3 of the roadmap.
+This session builds all page sections with visual layouts from Figma, connects each to the CMS, and establishes the parchment image page background, advancing Phase 3 of the roadmap.
 
-**Roadmap reference:** Phase 3 — Sections & Content
+**Roadmap reference:** Phase 3 — Sections & Content has been updated with additions since last session. 
 
 ---
 
 ## Goal
 
-By the end of this session: all six sections (Hero, About, Overview, Gallery, Prologue, Retail) are visually implemented per Figma, responsive from 320px to 1440px, and CMS-connected via `sections.json`. The Easter Egg section has a defined and working trigger. The parchment page background is live.
+By the end of this session: all eight sections (Hero, About, Overview, Gallery, Prologue, Retail, Footer, Easter egg) are visually implemented per Figma, responsive from 320px to 2560px, and CMS-connected via `sections.json`. The Easter Egg section has a defined and working trigger. The parchment page background is live.
 
 ---
 
 ## Before Writing Any Code
 
 ### Step 1 — Token check
-Ask the user: "Have any design system tokens changed since Session 002?" If yes, request the updated token export and update `tokens.css` and `DESIGN-SYSTEM.md` before proceeding. If anything is unclear, stop and ask.
+Ask the user: "Have any design system tokens changed since Session 002?" 
+- If **yes**: Request the updated token export. Update `tokens.css` and `DESIGN-SYSTEM.md` 
+  **before proceeding with any section builds.**
+- If **no** or **unclear**: Ask the user to confirm. Do not assume or guess token values.
+- **Stop here** if the user cannot confirm token status — do not proceed.
 
-### Step 2 — Figma references
-Fetch the Figma design context for each section before building it. Known nodes:
-- **Overall layout (wide):** `https://www.figma.com/design/XsjKeeMALXqJLBywDkyqJL/FOHA-club-website?node-id=42-13` — hero, about, overview visible
-- **Check for additional section nodes** by fetching the file metadata or asking the user to provide node links for gallery, prologue, and retail sections.
-- If a section's design reference is unclear — stop and ask before building. Do not assume or guess layouts.
+### Step 2 — Figma references (BLOCKER)
+Before building ANY section, fetch the Figma design for that section. Known reference nodes:
 
----
+- **Overall layout (desktop/wide breakpoint):** 
+  `https://www.figma.com/design/XsjKeeMALXqJLBywDkyqJL/FOHA-club-website?node-id=89-23&t=wZuGSfKkA2gd9ElQ-1`
+
+- **Mobile layout (mobile breakpoint):** 
+  `https://www.figma.com/design/XsjKeeMALXqJLBywDkyqJL/FOHA-club-website?node-id=95-115&t=wZuGSfKkA2gd9ElQ-1`
+
+**If a section design is unclear:**
+- Stop immediately
+- Ask the user: "Which Figma node contains the [Section Name] design?"
+- Do not assume, infer, or build without a confirmed visual reference
+- Proceed only after the user provides a valid node ID or screenshot
+
+### Step 3 — Discrepancy Check (CRITICAL)
+Before building each section, verify alignment:
+
+| Check | Source A | Source B | Action if Different |
+|-------|----------|----------|---------------------|
+| Section count | Roadmap (8) | Prompt Goals | Must match; stop and ask |
+| Section names & order | Roadmap Phase 3 | Figma design | Must match; ask user which is current |
+| Responsive breakpoints | Roadmap (320–2560px) | Figma specs | Clarify with user before building |
+| CMS field names | `config.yml` | Prompt Tasks | Align before content connection |
+| Background treatment | Figma (parchment) | Prompt | Must be established before sections |
+
+**If any discrepancy is found:**
+1. Quote the conflicting sources to the user
+2. Ask: "Which source is authoritative for this build?"
+3. Wait for clarification
+4. Document the decision in the session log
+5. Do not proceed until resolved
+
+### Step 4 — Semantic HTML & Naming Convention
+Before writing markup, review NAMING-CONVENTIONS.md in the project root.
+This document contains:
+
+Figma-to-Code translation table (visual names → semantic HTML)
+BEM naming scoped to each section
+Markup checklist (how to verify semantic correctness)
+Accessibility integration (alt text, heading hierarchy, link labels)
+Decision tree (what to do when a Figma component's role is ambiguous)
 
 ## Tasks
 
-### Pre-flight
-- [ ] Confirm no token changes (or update tokens if changed)
-- [ ] Fetch Figma design references for all sections
+**Before building each section below, fetch its Figma node ID from the user or confirm it from the design file.** 
+Do not proceed with a section without a confirmed visual reference.
 
-### Page Background
-- [ ] Apply parchment background texture to the page (the Figma shows a warm parchment image behind all sections — this needs to be established before sections are laid out)
-- [ ] Revisit `body` background — `--color-bg-default` (dark) is currently set; confirm with Figma whether the overall page bg should be the parchment image or whether sections individually control their backgrounds
+### Pre-flight
+- [ ] Confirm no token changes or update tokens if changed
+- [ ] Fetch Figma design references for ALL sections (see Figma node IDs required below)
+- [ ] Check for discrepancies between Roadmap, Prompt, and Figma (resolve before proceeding)
+- [ ] Complete page background setup
+
+### Section Builds (Figma node ID required for each)
 
 ### 3.1 — Hero Section
 - [ ] Hero layout per Figma design reference
@@ -73,10 +115,24 @@ Fetch the Figma design context for each section before building it. Known nodes:
 - [ ] Clear visual treatment marking these as outbound links
 - [ ] Responsive
 
-### 3.7 — Easter Egg Section
-- [ ] The section is already in the DOM, 2000px below the footer — discovered purely by scrolling
-- [ ] Style and flesh out the section content per creative direction decided in this session
-- [ ] No code trigger required
+### 3.7 — Footer Section
+
+- [ ] Footer layout per Figma design reference
+- [ ] CMS-controlled: legal text
+- [ ] Responsive: single column on mobile, horizontal layout on desktop
+- [ ] Verify that Easter Egg section appears 2000px below the footer (no overlap, no gap)
+
+**Scroll pause feature (Phase 4):**
+The footer acts as a "discovery gateway"—when the user scrolls to the footer, scrolling pauses 
+for 1.5 seconds before releasing. This feature will be implemented in Phase 4 as a scroll-lock interaction.
+
+**Note:** This section is crucial for Easter Egg trigger positioning. Confirm footer height 
+and layout before finalizing Easter Egg placement.
+
+### 3.8 — Easter Egg Section
+- [ ] layout per Figma design reference
+- [ ] The section is already in the DOM, 2000px below the footer — discovered purely by scrolling (no button, link, or JS trigger)
+- [ ] Verify the section appears when user scrolls past the footer (manual testing)
 
 ---
 
@@ -100,7 +156,7 @@ Fetch the Figma design context for each section before building it. Known nodes:
 
 ## Design Reference
 
-- **Figma file:** `https://www.figma.com/design/XsjKeeMALXqJLBywDkyqJL/FOHA-club-website`
+- **Figma file:** `https://www.figma.com/design/XsjKeeMALXqJLBywDkyqJL/FOHA-club-website?node-id=89-23&t=wZuGSfKkA2gd9ElQ-1`
 - Fetch section node IDs at session start — do not hardcode layouts without a Figma reference
 - All colours, spacing, radius, shadows from `tokens.css` only — no hardcoded values
 
@@ -108,12 +164,13 @@ Fetch the Figma design context for each section before building it. Known nodes:
 
 ## Definition of Done
 
-- [ ] All six sections visible and correctly laid out in the browser at 375px and 1440px
+- [ ] All eight sections visible and correctly laid out in the browser at 375px and 1440px
 - [ ] Page background matches the Figma parchment design
 - [ ] `load-content.js` injects CMS content into all sections without console errors
 - [ ] Gallery lightbox opens and closes using the existing modal component
 - [ ] Retail links open in a new tab
 - [ ] Easter Egg section is styled and its concept is documented in `EASTER-EGG.md`
+- [ ] Footer has `data-scroll-lock="true"` attribute (ready for Phase 4 scroll-lock feature)
 - [ ] All styles use design system tokens — no hardcoded values
 - [ ] No new console errors introduced
 - [ ] All Phase 3 tasks checked off in `ROADMAP.md`
