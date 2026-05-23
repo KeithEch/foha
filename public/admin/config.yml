@@ -57,3 +57,8 @@ collections:
                   - { name: name, label: Store Name, widget: string }
                   - { name: url, label: URL, widget: string }
               - { name: paragraph, label: Paragraph, widget: text }
+          - name: footer
+            label: Footer
+            widget: object
+            fields:
+              - { name: legal, label: Legal Text, widget: text }

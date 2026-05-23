@@ -36,8 +36,9 @@
      Raw palette — referenced by semantic color tokens.
      Do not use directly in components.
   --------------------------------------------------- */
-  --primitive-black: #000000;
-  --primitive-white: #FFFFFF;
+  --primitive-black:    #000000;
+  --primitive-black-80: rgba(0, 0, 0, 0.8);
+  --primitive-white:    #FFFFFF;
 
   --primitive-purple-500: #BE5FB1;
   --primitive-purple-900: #BE17A8;
@@ -74,6 +75,8 @@
   --color-bg-subtle:         var(--primitive-black);
   --color-bg-divider:        var(--primitive-brown-800);
   --color-bg-accent:         var(--primitive-brown-500);
+  --color-bg-secondary:      var(--primitive-beige-500);
+  --color-bg-subtle-80:      var(--primitive-black-80);
   --color-bg-action-default: var(--primitive-black);
   --color-bg-action-hover:   var(--primitive-mud-800);
   --color-bg-nav:            var(--primitive-beige-500);
@@ -89,6 +92,7 @@
   --color-border-strong:                    var(--primitive-yellorange-600);
   --color-border-default-on-light:          var(--primitive-brown-500);
   --color-border-default-on-dark:           var(--primitive-beige-500);
+  --color-border-subtle:                    var(--primitive-mud-800);
   --color-border-action-primary-default:    var(--primitive-purple-900);
   --color-border-action-primary-hover:      var(--primitive-purple-900);
   --color-border-action-secondary-default:  var(--primitive-yellorange-600);
@@ -114,16 +118,25 @@
   --------------------------------------------------- */
   --font-family-base: 'Alegreya', serif;
 
-  --font-size-p1:   18px;
-  --font-size-menu: 24px;
-  --font-size-h2:   32px;
+  --font-size-p1:        18px;
+  --font-size-p2:        16px;
+  --font-size-menu:      24px;
+  --font-size-h3-mobile: 24px;
+  --font-size-h2:        32px;
+  --font-size-h3:        32px;
+  --font-size-button:    28px;
 
   --font-weight-regular: 400;
   --font-weight-medium:  500;
+  --font-weight-bold:    700;
 
-  --line-height-p1:   24px;
-  --line-height-menu: 24px;
-  --line-height-h2:   36px;
+  --line-height-p1:          24px;
+  --line-height-p2:          22px;
+  --line-height-menu:        24px;
+  --line-height-h2:          36px;
+  --line-height-h3:          40px;
+  --line-height-h3-mobile:   32px;
+  --line-height-button:      36px;
 
   /* ---------------------------------------------------
      SPACING
@@ -149,6 +162,9 @@
   --border-xs:   var(--primitive-1);
   --border-sm:   var(--primitive-2);
   --border-md:   var(--primitive-4);
+  --border-lg:   var(--primitive-6);
+  --border-xl:   var(--primitive-8);
+  --border-xxl:  var(--primitive-12);
 
   /* ---------------------------------------------------
      BORDER RADIUS
@@ -183,7 +199,7 @@
      @media conditions — hardcode these values in rules
      and cite these tokens as the canonical reference.
   --------------------------------------------------- */
-  --bp-mobile:  375px;
+  --bp-mobile:  390px;
   --bp-tablet:  768px;
   --bp-desktop: 1024px;
   --bp-wide:    1440px;

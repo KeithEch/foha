@@ -8,37 +8,57 @@
     fetch('/content/sections.json')
       .then(function (res) { return res.ok ? res.json() : Promise.reject(); })
       .then(function (c) {
+
+        // Hero
         set('[data-content="hero.subhead"]', c.hero && c.hero.subhead);
 
+        // About — heading and body copy
         set('[data-content="about.heading1"]', c.about && c.about.heading1);
-        set('[data-content="about.stats"]', c.about && c.about.stats);
         set('[data-content="about.heading2"]', c.about && c.about.heading2);
         set('[data-content="about.paragraph"]', c.about && c.about.paragraph);
 
+        // About — stats list: split '·'-separated string into diamond-bullet items
+        var statsContainer = document.getElementById('about-stats');
+        if (statsContainer && c.about && c.about.stats) {
+          var items = c.about.stats.split(' · ');
+          statsContainer.innerHTML = '';
+          items.forEach(function (item) {
+            var li = document.createElement('li');
+            li.className = 'about__stat-item';
+            var bullet = document.createElement('span');
+            bullet.className = 'about__stat-bullet';
+            bullet.setAttribute('aria-hidden', 'true');
+            li.appendChild(bullet);
+            li.appendChild(document.createTextNode(item.trim()));
+            statsContainer.appendChild(li);
+          });
+        }
+
+        // Overview
         set('[data-content="overview.heading1"]', c.overview && c.overview.heading1);
 
+        // Gallery
         set('[data-content="gallery.heading1"]', c.gallery && c.gallery.heading1);
 
+        // Prologue
         set('[data-content="prologue.heading1"]', c.prologue && c.prologue.heading1);
         set('[data-content="prologue.paragraph"]', c.prologue && c.prologue.paragraph);
 
+        // Retail — heading and body copy
         set('[data-content="retail.heading1"]', c.retail && c.retail.heading1);
         set('[data-content="retail.paragraph"]', c.retail && c.retail.paragraph);
 
-        var linksContainer = document.getElementById('retail-links');
-        if (linksContainer && c.retail && c.retail.links && c.retail.links.length) {
-          linksContainer.innerHTML = '';
-          c.retail.links.forEach(function (link) {
-            var li = document.createElement('li');
-            var a = document.createElement('a');
-            a.href = link.url;
-            a.textContent = link.name;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
-            li.appendChild(a);
-            linksContainer.appendChild(li);
+        // Retail — update link hrefs by index (preserves styled HTML buttons)
+        if (c.retail && c.retail.links) {
+          var retailLinks = document.querySelectorAll('#retail-links .retail__link');
+          c.retail.links.forEach(function (link, i) {
+            if (retailLinks[i]) retailLinks[i].href = link.url;
           });
         }
+
+        // Footer
+        set('[data-content="footer.legal"]', c.footer && c.footer.legal);
+
       })
       .catch(function () { /* placeholder content remains */ });
   }

@@ -164,7 +164,7 @@ and layout before finalizing Easter Egg placement.
 
 ## Definition of Done
 
-- [ ] All eight sections visible and correctly laid out in the browser at 375px and 1440px
+- [ ] All eight sections visible and correctly laid out in the browser at 390px and 1440px
 - [ ] Page background matches the Figma parchment design
 - [ ] `load-content.js` injects CMS content into all sections without console errors
 - [ ] Gallery lightbox opens and closes using the existing modal component
