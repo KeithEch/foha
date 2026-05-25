@@ -208,8 +208,9 @@ header {
   top: 15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 378px;
-  height: 215px;
+  width: min(378px, 94%);
+  aspect-ratio: 378 / 215;
+  height: auto;
 }
 
 .hero__logo-img {
@@ -1168,4 +1169,23 @@ header {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
+}
+
+/* ==========================================
+   REDUCED MOTION
+   Override all transitions and smooth scroll
+   when the user has requested less motion.
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .nav__link,
+  .overview__read-more,
+  .retail__link,
+  .modal__close {
+    transition: none;
+  }
 }
