@@ -9,10 +9,12 @@
   </head>
   <body>
 
+    <div id="nav-sentinel" aria-hidden="true"></div>
+
     <header>
       <nav class="nav" aria-label="Site navigation">
         <a href="/" class="nav__logo" aria-label="FOHA home">
-          <img src="/images/logo-navbar.png" alt="FOHA" class="nav__logo-img" />
+          <img src="/images/logo-navbar-v2.png" alt="FOHA" class="nav__logo-img" />
         </a>
         <div class="nav__menu">
           <a href="#overview" class="nav__link nav__link--desktop-only">Overview</a>
@@ -36,12 +38,15 @@
           <!-- 3.1 HERO -->
           <section id="hero" aria-label="Hero" class="hero">
             <div class="hero__marquee">
-              <img src="/images/hero-bg.jpg" alt="" class="hero__bg" aria-hidden="true" />
+              <picture>
+                <source media="(min-width: 1024px)" srcset="/images/KeyBG_1920.jpg" />
+                <img src="/images/Keyart_736.jpg" alt="" class="hero__bg" aria-hidden="true" />
+              </picture>
               <div class="hero__fg" aria-hidden="true">
                 <img src="/images/hero-fg.png" alt="" class="hero__fg-img" />
               </div>
               <div class="hero__logo-wrap">
-                <img src="/images/rot-mad-logo.png" alt="The Rot of Madness" class="hero__logo-img" />
+                <img src="/images/rot-mad-logo.png" alt="The Rot of Madness" class="hero__logo-img" data-content="hero.logo_image" />
               </div>
             </div>
             <p class="sr-only" data-content="hero.subhead">A tabletop adventure of moral consequence and madness.</p>
@@ -209,6 +214,7 @@
     </div>
 
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/nav-scroll.js"></script>
     <script type="module" src="/src/js/modal.js"></script>
     <script type="module" src="/src/js/load-content.js"></script>
     <script type="module" src="/src/js/scroll-lock.js"></script>

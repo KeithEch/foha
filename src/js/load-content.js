@@ -11,6 +11,8 @@
 
         // Hero
         set('[data-content="hero.subhead"]', c.hero && c.hero.subhead);
+        var logoImg = document.querySelector('[data-content="hero.logo_image"]');
+        if (logoImg && c.hero && c.hero.logo_image) logoImg.src = c.hero.logo_image;
 
         // About — heading and body copy
         set('[data-content="about.heading1"]', c.about && c.about.heading1);

@@ -142,6 +142,7 @@
      SPACING
      Pixel values from the Spacing token group.
   --------------------------------------------------- */
+  --space-0:   0px;
   --space-4:   var(--primitive-4);
   --space-8:   var(--primitive-8);
   --space-12:  var(--primitive-12);
