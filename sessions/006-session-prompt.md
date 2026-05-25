@@ -87,7 +87,16 @@ From `RESPONSIVE.md`: at tablet (768px–1023px) the desktop nav layout is activ
 
 ## Closing Steps
 
-- **Log file:** `sessions/006-log.md`
-- **Next session stub:** `sessions/007-session-prompt.md` — based on Phase 6 (About Section Revisions)
-- Commit all changed files on `dev` and push to `origin/dev`.
-- Follow the close gate in the base prompt.
+### Phase 1 — Review & Prepare Next Session
+
+- Draft `sessions/007-session-prompt.md` based on Phase 6 (About Section Revisions) in `ROADMAP.md`, informed by what was learned this session.
+- Advise the user that the new prompt is ready for review, then **stop and wait**.
+
+### Phase 2 — Close
+
+Only proceed when the user explicitly says to close.
+
+- Write a session log at `sessions/006-log.md` (use `sessions/template-session-log.md` as the format reference).
+- Update the completed sessions index in `sessions/index.md`.
+- Commit all changed files on `dev`.
+- Push to `origin/dev`.
