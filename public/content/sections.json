@@ -6,6 +6,8 @@
   "about": {
     "heading1": "A tabletop RPG of high adventure",
     "stats": "System: Agnostic · Players: 4–6 · Level: 4–6 · Pages: 80 · Format: .pdf",
+    "system_modal_title": "System Agnostic",
+    "system_modal_body": "The Rot of Madness is system agnostic — it can be run with any tabletop RPG ruleset. Whether you use D&D 5e, OSR, or your own house rules, the adventure is designed to work alongside your game of choice.",
     "heading2": "The Rot is a demented madhouse built upon cursed runes. It is filled with disfigured inmates, covered in fog, and concealing arcane secrets.",
     "paragraph": "The warden of the Rot, an Archmage, has been using a powerful relic to conduct nefarious experiments upon the Rot's inmates."
   },

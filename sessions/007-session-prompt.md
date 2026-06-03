@@ -49,9 +49,9 @@ The About section has the following CMS-connected fields in `load-content.js`:
 
 Verify all four fields are wired correctly. If the user requests a structural change to the stats list, update the CMS field and JS accordingly.
 
-### 6.3 — Max-width consistency (carry-forward consideration)
+### 6.3 — Max-width
 
-The hero and nav bar now have `max-width: 1680px`. Discuss with the user whether the About section (and other sections) should get a matching max-width constraint, or whether that's deferred to a later pass.
+Set `max-width: 1680px` and `margin-inline: auto` on the About section to match the hero and nav bar. Apply to `section#about` (`.about`) in `src/style.css`.
 
 ---
 
@@ -75,6 +75,7 @@ The hero and nav bar now have `max-width: 1680px`. Discuss with the user whether
 
 - [ ] User's About revision requests implemented (or "none requested" noted)
 - [ ] All About CMS fields verified connected and updating correctly
+- [ ] `max-width: 1680px` applied to About section
 - [ ] About section verified at 320px, 390px, 768px, 1024px, 1280px, 1440px
 - [ ] No new console errors introduced
 

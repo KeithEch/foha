@@ -22,6 +22,7 @@
     previouslyFocused = document.activeElement;
 
     var imgSrc = trigger && trigger.getAttribute('data-gallery-img');
+    var customTitle = trigger && trigger.getAttribute('data-modal-title');
     if (imgSrc) {
       // Gallery lightbox mode
       if (modalTitle) modalTitle.textContent = '';
@@ -29,6 +30,13 @@
         modalContent.innerHTML = '<img src="' + imgSrc + '" alt="" class="modal__lightbox-img" />';
       }
       if (modalContainer) modalContainer.classList.add('modal__container--lightbox');
+    } else if (customTitle) {
+      // Custom text modal mode
+      if (modalTitle) modalTitle.textContent = customTitle;
+      if (modalContent) {
+        var customContent = trigger.getAttribute('data-modal-content') || '';
+        modalContent.innerHTML = '<p>' + customContent + '</p>';
+      }
     }
 
     modal.removeAttribute('hidden');
@@ -63,8 +71,9 @@
     }
   });
 
-  openButtons.forEach(function (btn) {
-    btn.addEventListener('click', function () { openModal(btn); });
+  document.addEventListener('click', function (e) {
+    var trigger = e.target.closest('[data-modal-open]');
+    if (trigger) openModal(trigger);
   });
   closeButtons.forEach(function (btn) { btn.addEventListener('click', closeModal); });
 }());

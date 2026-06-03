@@ -27,6 +27,8 @@ collections:
             fields:
               - { name: heading1, label: Heading 1, widget: string }
               - { name: stats, label: Stats Text, widget: string }
+              - { name: system_modal_title, label: System Modal Title, widget: string }
+              - { name: system_modal_body, label: System Modal Body, widget: text }
               - { name: heading2, label: Heading 2, widget: string }
               - { name: paragraph, label: Paragraph, widget: text }
           - name: overview

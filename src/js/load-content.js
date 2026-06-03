@@ -31,7 +31,25 @@
             bullet.className = 'about__stat-bullet';
             bullet.setAttribute('aria-hidden', 'true');
             li.appendChild(bullet);
-            li.appendChild(document.createTextNode(item.trim()));
+
+            var trimmed = item.trim();
+            if (trimmed.indexOf('System:') === 0) {
+              var colonIdx = trimmed.indexOf(':');
+              var label = trimmed.slice(0, colonIdx + 1);
+              var value = trimmed.slice(colonIdx + 1).trim();
+              li.appendChild(document.createTextNode(label + ' '));
+              var btn = document.createElement('button');
+              btn.type = 'button';
+              btn.className = 'about__stat-link';
+              btn.setAttribute('data-modal-open', '');
+              btn.setAttribute('data-modal-title', (c.about && c.about.system_modal_title) || 'System Agnostic');
+              btn.setAttribute('data-modal-content', (c.about && c.about.system_modal_body) || '');
+              btn.textContent = value;
+              li.appendChild(btn);
+            } else {
+              li.appendChild(document.createTextNode(trimmed));
+            }
+
             statsContainer.appendChild(li);
           });
         }

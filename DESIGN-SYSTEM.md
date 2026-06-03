@@ -235,6 +235,7 @@ CSS custom properties cannot be used directly inside `@media` conditions. These 
 | `--bp-mobile` | `390px` | Smallest design target (Figma mobile canvas — iPhone 14) |
 | `--bp-tablet` | `768px` | Tablet and large phone landscape |
 | `--bp-desktop` | `1024px` | Desktop minimum |
+| `--bp-large` | `1280px` | Large laptop / mid-wide desktop |
 | `--bp-wide` | `1440px` | Figma design canvas width — wide desktop |
 
 **Usage pattern:**

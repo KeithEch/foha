@@ -203,6 +203,7 @@
   --bp-mobile:  390px;
   --bp-tablet:  768px;
   --bp-desktop: 1024px;
+  --bp-large:   1280px;
   --bp-wide:    1440px;
 
 }
