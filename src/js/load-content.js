@@ -56,6 +56,7 @@
 
         // Overview
         set('[data-content="overview.heading1"]', c.overview && c.overview.heading1);
+        set('[data-content="overview.paragraph"]', c.overview && c.overview.paragraph);
 
         // Gallery
         set('[data-content="gallery.heading1"]', c.gallery && c.gallery.heading1);
