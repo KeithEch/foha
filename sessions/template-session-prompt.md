@@ -10,6 +10,8 @@ One sentence: what this session builds and which roadmap phase it advances.
 
 **Roadmap reference:** Phase X — [Phase Name]
 
+**Branch:** `session/NNN-short-title`
+
 ---
 
 ## Goal
@@ -65,6 +67,7 @@ How to verify the session succeeded. Tie back to the roadmap deliverables.
 - [ ] Deliverable one is live and working
 - [ ] Deliverable two verified in browser
 - [ ] No console errors; Lighthouse score unaffected (or improved)
+- [ ] All session work committed and pushed on the session branch
 
 ---
 
@@ -72,4 +75,5 @@ How to verify the session succeeded. Tie back to the roadmap deliverables.
 
 - **Log file:** `sessions/NNN-log.md`
 - **Next session stub:** Based on the next task block in `ROADMAP.md`
-- Follow the close gate in the base prompt.
+- Follow the close gate in the base prompt (Phase 2): commit and push the session branch, then merge into `dev` and push `dev`.
+- The `dev` → `main` merge is gated — it happens only on my explicit instruction (Phase 3 in the base prompt). Never suggest it.
