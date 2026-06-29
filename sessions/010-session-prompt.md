@@ -107,5 +107,7 @@ Only proceed when the user explicitly says to close.
 
 - Write a session log at `sessions/010-log.md` (use `sessions/template-session-log.md` as the format reference).
 - Update the completed sessions index in `sessions/index.md`.
-- Commit all changed files on `dev`.
-- Push to `origin/dev`.
+- Commit all changed files on the session branch.
+- Push the session branch to origin.
+- Merge the session branch into `dev`, then push `dev`.
+- Keep the session branch — it is not deleted until after `dev` → `main`.
