@@ -654,8 +654,7 @@ header.nav--hidden {
   position: absolute;
   inset: 0;
   background-image: url('/images/bg_pattern.jpg');
-  background-size: 601px 428px;
-  mix-blend-mode: overlay;
+  background-size: 450px 321px;
   pointer-events: none;
 }
 
@@ -678,6 +677,7 @@ header.nav--hidden {
   line-height: var(--line-height-h3-mobile);
   color: var(--color-text-heading-on-dark);
   padding-right: var(--space-16);
+  margin-bottom: var(--space-24);
 }
 
 .gallery__list {
@@ -686,14 +686,15 @@ header.nav--hidden {
   gap: var(--space-24);
   align-items: center;
   overflow-x: auto;
-  padding-bottom: var(--space-16);
-  /* scrollbar styling */
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-border-default-on-dark) transparent;
+  padding-bottom: var(--space-24);
 }
 
 .gallery__list::-webkit-scrollbar {
-  height: 4px;
+  height: 3px;
+}
+
+.gallery__list::-webkit-scrollbar-button {
+  display: none;
 }
 
 .gallery__list::-webkit-scrollbar-track {
@@ -701,7 +702,7 @@ header.nav--hidden {
 }
 
 .gallery__list::-webkit-scrollbar-thumb {
-  background-color: var(--color-border-default-on-dark);
+  background-color: var(--color-border-action-primary-default);
   border-radius: 2px;
 }
 
@@ -757,9 +758,7 @@ header.nav--hidden {
   .gallery__heading {
     font-size: var(--font-size-h3);
     line-height: var(--line-height-h3);
-    max-width: 747px;
     padding-right: 0;
-    margin-bottom: var(--space-24);
   }
 
   .gallery__item--landscape .gallery__img {
@@ -1257,7 +1256,7 @@ header.nav--hidden {
   background: none;
   border: var(--border-none);
   border-radius: var(--radius-sm);
-  color: var(--color-text-paragraph-on-dark);
+  color: var(--color-border-action-primary-default);
   font-size: var(--font-size-h2);
   line-height: 1;
   padding: var(--space-4) var(--space-8);
@@ -1296,6 +1295,32 @@ header.nav--hidden {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .modal__container {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: var(--space-16);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal__lightbox-img {
+    max-height: calc(100vh - 32px - 40px);
+    object-fit: contain;
+  }
 }
 
 /* ==========================================
