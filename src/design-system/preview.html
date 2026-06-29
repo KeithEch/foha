@@ -251,6 +251,10 @@
         <div class="token-label">--primitive-black<br>#000000</div>
       </div>
       <div class="swatch">
+        <div class="swatch-box" style="background:rgba(0,0,0,0.8);"></div>
+        <div class="token-label">--primitive-black-80<br>rgba(0,0,0,0.8)</div>
+      </div>
+      <div class="swatch">
         <div class="swatch-box" style="background:#FFFFFF;"></div>
         <div class="token-label">--primitive-white<br>#FFFFFF</div>
       </div>
@@ -330,7 +334,9 @@
     <p class="sub-title">Background</p>
     <div class="semantic-group">
       <div class="semantic-row"><div class="semantic-box" style="background:var(--color-bg-default);"></div><div class="semantic-info">--color-bg-default<span>mud-800 · #1A1817</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-bg-secondary);border-color:rgba(0,0,0,0.1);"></div><div class="semantic-info">--color-bg-secondary<span>beige-500 · #E8CFA7</span></div></div>
       <div class="semantic-row"><div class="semantic-box" style="background:var(--color-bg-subtle);"></div><div class="semantic-info">--color-bg-subtle<span>black · #000000</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-bg-subtle-80);"></div><div class="semantic-info">--color-bg-subtle-80<span>black-80 · rgba(0,0,0,0.8)</span></div></div>
       <div class="semantic-row"><div class="semantic-box" style="background:var(--color-bg-divider);"></div><div class="semantic-info">--color-bg-divider<span>brown-800 · #1F160F</span></div></div>
       <div class="semantic-row"><div class="semantic-box" style="background:var(--color-bg-accent);"></div><div class="semantic-info">--color-bg-accent<span>brown-500 · #3D2514</span></div></div>
       <div class="semantic-row"><div class="semantic-box" style="background:var(--color-bg-action-default);"></div><div class="semantic-info">--color-bg-action-default<span>black · #000000</span></div></div>
@@ -342,6 +348,7 @@
       <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-strong);"></div><div class="semantic-info">--color-border-strong<span>yellorange-600 · #FFBB00</span></div></div>
       <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-default-on-light);"></div><div class="semantic-info">--color-border-default-on-light<span>brown-500 · #3D2514</span></div></div>
       <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-default-on-dark);"></div><div class="semantic-info">--color-border-default-on-dark<span>beige-500 · #E8CFA7</span></div></div>
+      <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-subtle);"></div><div class="semantic-info">--color-border-subtle<span>mud-800 · #1A1817</span></div></div>
       <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-action-primary-default);"></div><div class="semantic-info">--color-border-action-primary-default<span>purple-900 · #BE17A8</span></div></div>
       <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-action-primary-hover);"></div><div class="semantic-info">--color-border-action-primary-hover<span>purple-900 · #BE17A8</span></div></div>
       <div class="semantic-row"><div class="semantic-box" style="background:var(--color-border-action-secondary-default);"></div><div class="semantic-info">--color-border-action-secondary-default<span>yellorange-600 · #FFBB00</span></div></div>
@@ -377,13 +384,33 @@
     </div>
 
     <div class="type-sample">
+      <div style="font-size:var(--font-size-h3);font-weight:var(--font-weight-medium);line-height:var(--line-height-h3);max-width:500px;">The Rot of Madness sets up difficult moral choices.</div>
+      <div class="type-meta">h3<br>32px · Medium (500)<br>line-height 40px<br>--font-size-h3</div>
+    </div>
+
+    <div class="type-sample">
+      <div style="font-size:var(--font-size-h3-mobile);font-weight:var(--font-weight-medium);line-height:var(--line-height-h3-mobile);max-width:500px;">The Rot of Madness sets up difficult moral choices.</div>
+      <div class="type-meta">h3-mobile<br>24px · Medium (500)<br>line-height 32px<br>--font-size-h3-mobile</div>
+    </div>
+
+    <div class="type-sample">
       <div style="font-size:var(--font-size-menu);font-weight:var(--font-weight-medium);line-height:var(--line-height-menu);">Overview</div>
       <div class="type-meta">menu · menu-hover<br>24px · Medium (500)<br>line-height 24px<br>--font-size-menu</div>
     </div>
 
     <div class="type-sample">
+      <div style="font-size:var(--font-size-button);font-weight:var(--font-weight-bold);line-height:var(--line-height-button);">Free Sample</div>
+      <div class="type-meta">button-default<br>28px · Bold (700)<br>line-height 36px<br>--font-size-button</div>
+    </div>
+
+    <div class="type-sample">
       <div style="font-size:var(--font-size-p1);font-weight:var(--font-weight-regular);line-height:var(--line-height-p1);max-width:500px;">A tabletop RPG of high adventure filled with disfigured inmates, covered in fog, and concealing arcane secrets.</div>
       <div class="type-meta">p1<br>18px · Regular (400)<br>line-height 24px<br>--font-size-p1</div>
+    </div>
+
+    <div class="type-sample">
+      <div style="font-size:var(--font-size-p2);font-weight:var(--font-weight-regular);line-height:var(--line-height-p2);max-width:500px;">Thank you to those who attended the Winter meeting. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="type-meta">p2<br>16px · Regular (400)<br>line-height 22px<br>--font-size-p2</div>
     </div>
   </section>
 
@@ -415,6 +442,9 @@
     <div class="border-row"><div class="space-name">--border-xs (1px)</div><div class="border-sample" style="border-width:1px;"></div></div>
     <div class="border-row"><div class="space-name">--border-sm (2px)</div><div class="border-sample" style="border-width:2px;"></div></div>
     <div class="border-row"><div class="space-name">--border-md (4px)</div><div class="border-sample" style="border-width:4px;"></div></div>
+    <div class="border-row"><div class="space-name">--border-lg (6px)</div><div class="border-sample" style="border-width:6px;"></div></div>
+    <div class="border-row"><div class="space-name">--border-xl (8px)</div><div class="border-sample" style="border-width:8px;"></div></div>
+    <div class="border-row"><div class="space-name">--border-xxl (12px)</div><div class="border-sample" style="border-width:12px;"></div></div>
   </section>
 
   <!-- ================================================================
@@ -481,8 +511,8 @@
   <section>
     <h2 class="section-title">Breakpoints</h2>
     <div class="bp-row">
-      <div class="space-name">--bp-mobile<br>375px</div>
-      <div class="bp-track"><div class="bp-fill" style="width:calc(375 / 1440 * 100%);"></div></div>
+      <div class="space-name">--bp-mobile<br>390px</div>
+      <div class="bp-track"><div class="bp-fill" style="width:calc(390 / 1440 * 100%);"></div></div>
     </div>
     <div class="bp-row">
       <div class="space-name">--bp-tablet<br>768px</div>

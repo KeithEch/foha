@@ -28,10 +28,11 @@ Both are already in `src/style.css`.
 Primitive colors are the raw palette. Do not use these in component styles — use the semantic tokens below.
 
 ### Black & White
-| Token | Hex |
-|---|---|
-| `--primitive-black` | `#000000` |
-| `--primitive-white` | `#FFFFFF` |
+| Token | Hex | Notes |
+|---|---|---|
+| `--primitive-black` | `#000000` | |
+| `--primitive-black-80` | `rgba(0,0,0,0.8)` | Black at 80% opacity — overlay backgrounds |
+| `--primitive-white` | `#FFFFFF` | |
 
 ### Purple
 | Token | Hex | Notes |
@@ -84,7 +85,9 @@ Primitive colors are the raw palette. Do not use these in component styles — u
 | Token | Resolves to | Intended use |
 |---|---|---|
 | `--color-bg-default` | `mud-800` `#1A1817` | Main page background |
+| `--color-bg-secondary` | `beige-500` `#E8CFA7` | Secondary / light surface background |
 | `--color-bg-subtle` | `black` `#000000` | Recessed surfaces, subtle contrast against default |
+| `--color-bg-subtle-80` | `black-80` `rgba(0,0,0,0.8)` | Semi-transparent dark overlay (e.g. modal scrim) |
 | `--color-bg-divider` | `brown-800` `#1F160F` | Section dividers, separators |
 | `--color-bg-accent` | `brown-500` `#3D2514` | Accent panels, highlighted areas |
 | `--color-bg-action-default` | `black` `#000000` | Button / interactive element background (default state) |
@@ -102,6 +105,7 @@ Primitive colors are the raw palette. Do not use these in component styles — u
 | `--color-border-strong` | `yellorange-600` `#FFBB00` | High-emphasis borders — featured callout boxes |
 | `--color-border-default-on-light` | `brown-500` `#3D2514` | Standard border on light backgrounds |
 | `--color-border-default-on-dark` | `beige-500` `#E8CFA7` | Standard border on dark backgrounds |
+| `--color-border-subtle` | `mud-800` `#1A1817` | Low-contrast border — near-invisible on dark backgrounds |
 | `--color-border-action-primary-default` | `purple-900` `#BE17A8` | Primary button border (default) |
 | `--color-border-action-primary-hover` | `purple-900` `#BE17A8` | Primary button border (hover) |
 | `--color-border-action-secondary-default` | `yellorange-600` `#FFBB00` | Secondary button border (default) |
@@ -130,17 +134,22 @@ Primitive colors are the raw palette. Do not use these in component styles — u
 | `--font-family-base` | `'Alegreya', serif` |
 | `--font-weight-regular` | `400` |
 | `--font-weight-medium` | `500` |
+| `--font-weight-bold` | `700` |
 
 ### Named text styles
 
-| Style | Size token | Weight token | Line-height token | Colour token (dark bg) |
+| Style | Size token | Weight token | Line-height token | Notes |
 |---|---|---|---|---|
-| **p1** — body paragraph | `--font-size-p1` `18px` | `--font-weight-regular` | `--line-height-p1` `24px` | `--color-text-paragraph-on-dark` |
-| **menu** — nav link default | `--font-size-menu` `24px` | `--font-weight-medium` | `--line-height-menu` `24px` | `--color-text-menu-default` |
-| **menu-hover** — nav link hover | `--font-size-menu` `24px` | `--font-weight-medium` | `--line-height-menu` `24px` | `--color-text-menu-hover` |
-| **h2** — section heading | `--font-size-h2` `32px` | `--font-weight-regular` | `--line-height-h2` `36px` | `--color-text-heading-on-dark` |
+| **p1** — body paragraph | `--font-size-p1` `18px` | `--font-weight-regular` | `--line-height-p1` `24px` | Standard body copy |
+| **p2** — small body paragraph | `--font-size-p2` `16px` | `--font-weight-regular` | `--line-height-p2` `22px` | Prologue, Retail, Footer body copy |
+| **menu** — nav link default | `--font-size-menu` `24px` | `--font-weight-medium` | `--line-height-menu` `24px` | Nav links |
+| **menu-hover** — nav link hover | `--font-size-menu` `24px` | `--font-weight-medium` | `--line-height-menu` `24px` | Same as menu, different colour only |
+| **h2** — section heading (light) | `--font-size-h2` `32px` | `--font-weight-regular` | `--line-height-h2` `36px` | About section headings on light bg |
+| **h3** — section heading (dark) | `--font-size-h3` `32px` | `--font-weight-medium` | `--line-height-h3` `40px` | Overview, Prologue, Retail on dark bg |
+| **h3-mobile** — section heading mobile | `--font-size-h3-mobile` `24px` | `--font-weight-medium` | `--line-height-h3-mobile` `32px` | h3 at mobile breakpoint |
+| **button-default** — button label | `--font-size-button` `28px` | `--font-weight-bold` | `--line-height-button` `36px` | CTA button text (e.g. Free Sample) |
 
-> `menu` and `menu-hover` share identical font properties; only the colour token differs.
+> `h2` and `h3` are the same size but differ in weight and context: `h2` is Regular on light, `h3` is Medium on dark.
 
 ---
 
@@ -173,6 +182,9 @@ Values from the `Spacing` token group. Named after their pixel value.
 | `--border-xs` | `1px` | Hairline — subtle dividers |
 | `--border-sm` | `2px` | Standard border |
 | `--border-md` | `4px` | Emphasis border |
+| `--border-lg` | `6px` | Heavy border |
+| `--border-xl` | `8px` | Very heavy border |
+| `--border-xxl` | `12px` | Decorative / feature border |
 
 ---
 
@@ -220,9 +232,10 @@ CSS custom properties cannot be used directly inside `@media` conditions. These 
 
 | Token | Value | Use |
 |---|---|---|
-| `--bp-mobile` | `375px` | Smallest design target |
+| `--bp-mobile` | `390px` | Smallest design target (Figma mobile canvas — iPhone 14) |
 | `--bp-tablet` | `768px` | Tablet and large phone landscape |
 | `--bp-desktop` | `1024px` | Desktop minimum |
+| `--bp-large` | `1280px` | Large laptop / mid-wide desktop |
 | `--bp-wide` | `1440px` | Figma design canvas width — wide desktop |
 
 **Usage pattern:**

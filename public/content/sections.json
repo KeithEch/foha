@@ -1,33 +1,37 @@
 {
   "hero": {
-    "logo_image": "",
-    "hero_image": "",
+    "logo_image": "/images/rot-mad-logo.png",
     "subhead": "A tabletop adventure of moral consequence and madness."
   },
   "about": {
     "heading1": "A tabletop RPG of high adventure",
     "stats": "System: Agnostic · Players: 4–6 · Level: 4–6 · Pages: 80 · Format: .pdf",
+    "system_modal_title": "System Agnostic",
+    "system_modal_body": "The Rot of Madness is system agnostic — it can be run with any tabletop RPG ruleset. Whether you use D&D 5e, OSR, or your own house rules, the adventure is designed to work alongside your game of choice.",
     "heading2": "The Rot is a demented madhouse built upon cursed runes. It is filled with disfigured inmates, covered in fog, and concealing arcane secrets.",
-    "paragraph": "The warden of the Rot has been using a powerful relic to conduct nefarious experiments upon the Rot’s inmates."
+    "paragraph": "The warden of the Rot, an Archmage, has been using a powerful relic to conduct nefarious experiments upon the Rot's inmates."
   },
   "overview": {
-    "heading1": "Overview"
+    "heading1": "The Rot of Madness sets up difficult moral choices and serves as a role-playing challenge for characters of good alignment.",
+    "paragraph": "It requires GMs to become familiar with all of its details and make any rule set adjustments before playing."
   },
   "gallery": {
-    "heading1": "Gallery"
+    "heading1": "Sample some of the finer pages within this high adventure."
   },
   "prologue": {
-    "heading1": "Prologue",
-    "paragraph": "Prologue content placeholder."
+    "heading1": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ipsum magna, fermentum quis tortor id, euismod convallis lorem. Suspendisse eu elementum augue, ac faucibus justo. Etiam ac elit a neque pharetra aliquam eget in est."
   },
   "retail": {
-    "heading1": "Get Mad",
+    "heading1": "It is a long established fact that a reader will be distracted by the readable.",
     "links": [
-      {
-        "name": "Example Store",
-        "url": "https://example.com"
-      }
+      { "name": "itch.io", "url": "https://foha.itch.io" },
+      { "name": "DriveThruRPG", "url": "https://www.drivethrurpg.com" },
+      { "name": "Free Sample", "url": "https://foha.itch.io" }
     ],
-    "paragraph": "Available at the following retailers."
+    "paragraph": "Thank you to those of you who have supported this adventure."
+  },
+  "footer": {
+    "legal": "Published by The Fraternal Order of high Adventure, ©2026. The Rot of Madness is a work of fiction."
   }
 }
