@@ -5,7 +5,6 @@
   var openButtons = document.querySelectorAll('[data-modal-open]');
   var closeButtons = modal.querySelectorAll('[data-modal-close]');
   var previouslyFocused = null;
-  var modalContainer = modal.querySelector('.modal__container');
   var modalTitle = document.getElementById('modal-title');
   var modalContent = document.getElementById('modal-content');
 
@@ -29,7 +28,7 @@
       if (modalContent) {
         modalContent.innerHTML = '<img src="' + imgSrc + '" alt="" class="modal__lightbox-img" />';
       }
-      if (modalContainer) modalContainer.classList.add('modal__container--lightbox');
+      modal.classList.add('modal--lightbox');
     } else if (customTitle) {
       // Custom text modal mode
       if (modalTitle) modalTitle.textContent = customTitle;
@@ -49,7 +48,7 @@
     // Restore default content if lightbox was active
     if (modalTitle) modalTitle.textContent = defaultTitle;
     if (modalContent) modalContent.innerHTML = defaultContent;
-    if (modalContainer) modalContainer.classList.remove('modal__container--lightbox');
+    modal.classList.remove('modal--lightbox');
 
     modal.setAttribute('hidden', '');
     document.body.style.overflow = '';
