@@ -254,9 +254,9 @@
 
 ### Tasks
 
-- [ ] Ask if there are any revisions to current design of the Prologue section
-- [ ] Connect CMS fields for prologue content
-- [ ] Verify responsive layout at 320px–2560px
+- [x] Ask if there are any revisions to current design of the Prologue section
+- [x] Connect CMS fields for prologue content
+- [x] Verify responsive layout at 320px–2560px
 
 ### Deliverables
 
