@@ -19,7 +19,7 @@ By the end of this session: any user-requested revisions to the Prologue section
 Read `sessions/009-log.md` to understand what was done. Key carry-forwards:
 - The modal system was updated with a mobile fullscreen layout (`max-width: 767px`). No border, no radius, 16px padding, content fills the viewport.
 - The modal close button color was changed to `--color-border-action-primary-default` (purple-900) at all breakpoints.
-- The modal JS adds `modal__container--lightbox` directly to the container, but the CSS selector `.modal--lightbox .modal__container` expects it on the parent — the desktop lightbox width override is not currently applying. Fix if needed.
+- The modal JS lightbox class mismatch (JS was adding `modal__container--lightbox` to the container instead of `modal--lightbox` to the parent `.modal`) has since been fixed outside the numbered session sequence — see `sessions/maintenance-log.md`. No action needed here.
 - Gallery scrollbar relies on `-webkit-scrollbar` only — Firefox falls back to defaults.
 
 ### Step 2 — Review current Prologue state
@@ -76,6 +76,7 @@ Verify both fields update from CMS content. Check if any new fields are needed b
 - `src/js/load-content.js` — CMS wiring additions (if new fields needed)
 - `public/admin/config.yml` — Prologue CMS fields (if changes needed)
 - `public/content/sections.json` — Prologue content values
+- `sessions/maintenance-log.md` — has a pending, uncommitted Carry-Forwards update from the pre-session modal/build maintenance fix; commit it as part of this session's close (see Closing Steps)
 
 ## Out of Scope
 
@@ -107,7 +108,7 @@ Only proceed when the user explicitly says to close.
 
 - Write a session log at `sessions/010-log.md` (use `sessions/template-session-log.md` as the format reference).
 - Update the completed sessions index in `sessions/index.md`.
-- Commit all changed files on the session branch.
+- Commit all changed files on the session branch, including the pending `sessions/maintenance-log.md` Carry-Forwards update noted above.
 - Push the session branch to origin.
 - Merge the session branch into `dev`, then push `dev`.
 - Keep the session branch — it is not deleted until after `dev` → `main`.
