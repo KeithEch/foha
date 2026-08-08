@@ -772,6 +772,7 @@ header.nav--hidden {
 
 .prologue {
   position: relative;
+  z-index: 0;
   background-color: var(--color-bg-secondary);
   background-image: url('/images/bg_paper.jpg');
   background-size: cover;
@@ -839,14 +840,14 @@ header.nav--hidden {
 .prologue__illustration-wrap {
   width: 100%;
   overflow: hidden;
-  height: 360px;
+  height: 460px;
   margin-top: var(--space-24);
 }
 
 .prologue__illustration-img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 170%;
   object-fit: cover;
   object-position: top center;
 }
@@ -856,11 +857,22 @@ header.nav--hidden {
   display: none;
 }
 
+/* Midground decoration */
+.prologue__midground {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
 @media (min-width: 1024px) { /* --bp-desktop */
   .prologue__card-col {
     margin-left: auto;
     width: 868px;
     max-width: 62%;
+    margin-right: var(--space-56);
   }
 
   .prologue__card-outer {
@@ -893,14 +905,16 @@ header.nav--hidden {
     width: 285px;
     height: 510px;
     flex-shrink: 0;
-    margin-top: 0;
+    margin-top: var(--space-32);
+  }
+
+  .prologue__illustration-img {
+    height: 100%;
+    object-fit: contain;
   }
 
   .prologue__tent {
-    display: block;
     position: absolute;
-    top: 97px;
-    right: 235px;
     width: 223px;
     height: 300px;
     pointer-events: none;
@@ -911,6 +925,15 @@ header.nav--hidden {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+@media (min-width: 1280px) { /* --bp-large */
+  .prologue__tent {
+    display: block;
+    top: 38px;
+    right: 170px;
+    z-index: 2;
   }
 }
 

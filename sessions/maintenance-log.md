@@ -38,5 +38,7 @@ Ad-hoc fixes and environment notes that fall outside the numbered session sequen
 
 ### Carry-Forwards
 
-- Once Phase 9+ work resumes and `dev` is eventually merged toward `main`, the build will now succeed — this was a silent blocker that would have failed the first real Netlify deploy from `dev`.
+- Both fixes were merged to production: branched as `fix/modal-lightbox-and-build` off `dev`, merged into `dev`, then opened as [PR #3](https://github.com/KeithEch/foha/pull/3) and merged into `main`. `dev` and `main` are now both at `69f2031` — the observer.js build blocker will not affect the next Netlify deploy.
+- `fix/modal-lightbox-and-build` and the stale local-only `chore/template-git-steps` branch were deleted (local + origin) after confirming both were fully folded into `main`.
 - No roadmap phase status changed; this was pure maintenance, not phase work.
+- Separately, the directory move surfaced stale Claude Code global memory: sessions/memory for this project had been stored under old path-derived keys (`C:\Users\keith\.claude\projects\c--Users-keith-foha\` and `...\C--Users-keith-github_projects-foha\`) from before the move and a harness path-key format change. The memory files (session-branch workflow rule, Figma URL, Netlify URL) were copied forward into the current key's folder (`...\c--Users-keith-github-projects-foha\memory\`) so future sessions pick them up. The two old folders were left in place, not deleted.
