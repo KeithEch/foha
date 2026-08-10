@@ -1,4 +1,4 @@
-// Phase 14 will populate animation styles for [data-animate] and .is-visible.
+// Phase 15 will populate animation styles for [data-animate] and .is-visible.
 // This skeleton establishes the pattern — it runs but has no visual effect yet.
 
 const animatables = document.querySelectorAll('[data-animate]');
