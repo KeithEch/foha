@@ -127,6 +127,6 @@ All animated/transitional properties now have fallbacks. See `@media (prefers-re
 
 `src/js/scroll-lock.js` observes `[data-scroll-lock="true"]` (the `<footer>` element). When it enters the viewport, scrolling is locked for 1500ms then released. One-shot per page load. Skipped entirely when `prefers-reduced-motion: reduce` is active.
 
-## IntersectionObserver (Phase 14 Placeholder)
+## IntersectionObserver (Phase 15 Placeholder)
 
 `src/js/observer.js` observes all `[data-animate]` elements and adds `.is-visible` on intersection. No elements have `data-animate` in Phase 4; no styles exist for `.is-visible`. No visual effect.

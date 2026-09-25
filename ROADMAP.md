@@ -99,53 +99,53 @@
 
 **Goal:** All page sections built, connected to CMS, and visually based on Figma design reference. Sections can be developed in parallel.
 
-- [ ] Ask if any design system tokens have been changed. If yes, ask for latest token set exported from Figma. Update `tokens.css` and `DESIGN-SYSTEM.md`with any changes. If anything is unclear stop and ask for input.
-- [ ] Make all sections responsive from 320px to 2560px
+- [x] Ask if any design system tokens have been changed. If yes, ask for latest token set exported from Figma. Update `tokens.css` and `DESIGN-SYSTEM.md`with any changes. If anything is unclear stop and ask for input.
+- [ ] Make all sections responsive from 320px to 2560px _(verified only to 1440px — 1920px and 2560px checks slotted into Phase 16.1)_
 
 ### 3.1 — Hero Section
 
-- [ ] hero layout based on design reference
-- [ ] Animated graphic elements (placeholder for Phase 4 animation)
-- [ ] CMS-controlled graphic elements
+- [x] hero layout based on design reference
+- [x] Animated graphic elements (placeholder for Phase 4 animation)
+- [ ] CMS-controlled graphic elements _(logo_image wired; hero background/foreground images still hardcoded — slotted into Phase 14.1)_
 
 ### 3.2 — About Section
 
-- [ ] Text-driven section with CMS-controlled body copy
-- [ ] Support for a link that opens the modal window
+- [x] Text-driven section with CMS-controlled body copy
+- [x] Support for a link that opens the modal window
 
 ### 3.3 — Overview Section
 
-- [ ] Left column displaying image and text controlled by CMS
-- [ ] Right column displaying image
+- [x] Left column displaying image and text controlled by CMS
+- [x] Right column displaying image
 
 ### 3.4 — Image Gallery
 
-- [ ] Responsive grid or masonry layout with horizontal scroll
-- [ ] Lightbox or full-screen modal on image click
-- [ ] Images sourced from `/public/images/` or CMS media uploads
-- [ ] Lazy loading for performance
+- [x] Responsive grid or masonry layout with horizontal scroll
+- [x] Lightbox or full-screen modal on image click
+- [x] Images sourced from `/public/images/` or CMS media uploads
+- [x] Lazy loading for performance
 
 ### 3.5 — Prologue Section
 
-- [ ] Stylized text section
-- [ ] CMS-controlled content
+- [x] Stylized text section
+- [x] CMS-controlled content
 
 ### 3.6 — Retail Section
 
-- [ ] Grid/list of external retail store links
-- [ ] Each entry: store logo/icon link (opens in new tab with `rel="noopener noreferrer"`)
-- [ ] CMS-controlled: store name, URL, optional description
-- [ ] Clear visual treatment distinguishing this as an outbound-link section
+- [x] Grid/list of external retail store links
+- [x] Each entry: store logo/icon link (opens in new tab with `rel="noopener noreferrer"`)
+- [x] CMS-controlled: store name, URL, optional description
+- [x] Clear visual treatment distinguishing this as an outbound-link section
 
 ### 3.7 — Footer Section
 
-- [ ] displays logo image
-- [ ] legal text
+- [x] displays logo image
+- [x] legal text
 
 ### 3.8 — Easter Egg Section
 
-- [ ] Hidden from main navigation. 
-- [ ] Triggered by scrolling past the footer.
+- [x] Hidden from main navigation. 
+- [x] Triggered by scrolling past the footer.
 
 
 ### Deliverables
@@ -161,16 +161,16 @@
 
 ### Tasks
 
-- [ ] Document responsive design patterns for all breakpoints: 320px, 390px, 768px, 1024px, 1280px, 1440px
-- [ ] Prepare scroll-lock helper utilities and test on desktop/mobile before Phase 12 integration
-- [ ] Confirm `prefers-reduced-motion` media query handling across the project
-- [ ] Set up `IntersectionObserver` boilerplate for scroll-triggered animations (deferred to Phase 14)
+- [x] Document responsive design patterns for all breakpoints: 320px, 390px, 768px, 1024px, 1280px, 1440px
+- [x] Prepare scroll-lock helper utilities and test on desktop/mobile before Phase 12 integration
+- [x] Confirm `prefers-reduced-motion` media query handling across the project
+- [x] Set up `IntersectionObserver` boilerplate for scroll-triggered animations (deferred to Phase 15)
 
 ### Deliverables
 
 - Responsive design documentation
 - Scroll-lock mechanism tested and ready
-- Animation framework prepared (to be populated in Phase 14)
+- Animation framework prepared (to be populated in Phase 15)
 
 ---
 
@@ -180,11 +180,11 @@
 
 ### Tasks
 
-- [ ] Ask if there are any revisions to current design of the hero section
-- [ ] Connect CMS fields for hero__logo-wrap
-- [ ] Verify hero renders correctly at 320px–2560px
-- [ ] Ask if there are any revisions to the nav bar
-- [ ] Test nav sticky behavior and scroll interactions on all breakpoints
+- [x] Ask if there are any revisions to current design of the hero section
+- [x] Connect CMS fields for hero__logo-wrap
+- [x] Verify hero renders correctly at 320px–2560px _(confirmed at the standard six breakpoints, 320–1440px)_
+- [x] Ask if there are any revisions to the nav bar
+- [ ] Test nav sticky behavior and scroll interactions on all breakpoints _(only confirmed at 768px/1024px — see session 006 log; covered by Phase 13)_
 
 ### Deliverables
 
@@ -199,10 +199,10 @@
 
 ### Tasks
 
-- [ ] Ask if there are any revisions to current design of the About section
-- [ ] Connect CMS fields for about content
-- [ ] Verify section renders correctly at 320px–2560px
-- [ ] Test modal link functionality
+- [x] Ask if there are any revisions to current design of the About section
+- [x] Connect CMS fields for about content
+- [x] Verify section renders correctly at 320px–2560px _(confirmed at the standard six breakpoints, 320–1440px)_
+- [x] Test modal link functionality
 
 ### Deliverables
 
@@ -217,10 +217,10 @@
 
 ### Tasks
 
-- [ ] Ask if there are any revisions to current design of the Overview section
-- [ ] Connect CMS fields for overview content
-- [ ] Verify responsive layout at 320px–2560px
-- [ ] Test image loading and alt text
+- [x] Ask if there are any revisions to current design of the Overview section
+- [x] Connect CMS fields for overview content
+- [x] Verify responsive layout at 320px–2560px _(confirmed at the standard six breakpoints, 320–1440px)_
+- [x] Test image loading and alt text
 
 ### Deliverables
 
@@ -234,12 +234,12 @@
 
 ### Tasks
 
-- [ ] Ask if there are any revisions to current design of the Image Gallery section
-- [ ] Connect CMS media uploads for gallery images
-- [ ] Connect CMS fields for headline text
-- [ ] Implement lazy loading for performance
-- [ ] Verify gallery reflows appropriately at 320px–2560px
-- [ ] Test lightbox on mobile and desktop
+- [x] Ask if there are any revisions to current design of the Image Gallery section
+- [ ] Connect CMS media uploads for gallery images _(images are hardcoded in `index.html`; not CMS-managed — see session 009 log; slotted into Phase 14.4)_
+- [x] Connect CMS fields for headline text
+- [x] Implement lazy loading for performance
+- [ ] Verify gallery reflows appropriately at 320px–2560px _(not formally verified at all six breakpoints — see session 009 log; slotted into Phase 14.4)_
+- [ ] Test lightbox on mobile and desktop _(not tested this session — see session 009 log; slotted into Phase 14.4)_
 
 ### Deliverables
 
@@ -270,11 +270,11 @@
 
 ### Tasks
 
-- [ ] Ask if there are any revisions to current design of the Retail Section
-- [ ] Verify CMS fields for: store name, store URL, optional logo/icon, optional description
-- [ ] Ensure each link opens in new tab with `rel="noopener noreferrer"`
-- [ ] Verify responsive layout at 320px–2560px
-- [ ] Test all retail links on desktop and mobile
+- [x] Ask if there are any revisions to current design of the Retail Section
+- [x] Verify CMS fields for: store name, store URL, optional logo/icon, optional description _(verified: only store URL is CMS-driven, matched to hardcoded buttons by index; name unused, no logo/description fields — kept as-is by user decision, see session 011 log)_
+- [x] Ensure each link opens in new tab with `rel="noopener noreferrer"`
+- [x] Verify responsive layout at the six standard breakpoints (320, 390, 768, 1024, 1280, 1440)
+- [ ] Test all retail links on desktop and mobile _(desktop + emulated mobile widths verified; real-phone test pending by user — see session 011 log)_
 
 ### Deliverables
 
@@ -291,7 +291,7 @@
 
 - [ ] Ask if there are any revisions to current design of the Footer section
 - [ ] Verify CMS fields for legal text
-- [ ] Verify responsive layout at 320px–2560px
+- [ ] Verify responsive layout at the six standard breakpoints (320, 390, 768, 1024, 1280, 1440)
 - [ ] Ensure footer displays correctly at bottom of page
 
 ### Deliverables
@@ -311,7 +311,7 @@
 - [ ] Connect CMS fields for easter egg content
 - [ ] Test scroll-lock on desktop and mobile (touch scroll behavior)
 - [ ] Test easter egg is discoverable via keyboard navigation and scrolling
-- [ ] Verify responsive layout at 320px–2560px
+- [ ] Verify responsive layout at the six standard breakpoints (320, 390, 768, 1024, 1280, 1440)
 
 ### Deliverables
 
@@ -326,7 +326,7 @@
 
 ### Tasks
 
-- [ ] Verify sticky positioning and z-index across all sections
+- [ ] Verify sticky positioning and z-index across all sections at all six standard breakpoints _(carry-forward from Phase 5 — previously only confirmed at 768px/1024px)_
 - [ ] Test nav scroll behavior (hide/show on scroll, if applicable)
 - [ ] Confirm all nav links smooth-scroll to correct section anchors
 - [ ] Verify keyboard navigation (Tab through nav, Enter to activate links)
@@ -340,23 +340,88 @@
 
 ---
 
-## Phase 14 — Section Animations
+## Phase 14 — Final Section Design Revisions
+
+**Goal:** One last opportunity to revise each section's design — across all breakpoints — before animation work (Phase 15) and launch QA (Phase 16) lock in the final layouts. Follows the same session process established in Phases 5–12 (one `session/NNN-*` branch, prompt, and log per section).
+
+### 14.1 — Hero Section
+
+- [ ] Ask if there are any revisions to the current design of the Hero section across all six breakpoints (320, 390, 768, 1024, 1280, 1440)
+- [ ] Implement requested changes
+- [ ] Wire hero background/foreground `<picture>` `src`/`srcset` to the existing `hero_image`/`hero_bg` CMS fields _(carry-forward from Phase 3.1)_
+- [ ] User visually verifies changes are correct
+
+### 14.2 — About Section
+
+- [ ] Ask if there are any revisions to the current design of the About section across all six breakpoints
+- [ ] Implement requested changes
+- [ ] User visually verifies changes are correct
+
+### 14.3 — Overview Section
+
+- [ ] Ask if there are any revisions to the current design of the Overview section across all six breakpoints
+- [ ] Implement requested changes
+- [ ] User visually verifies changes are correct
+
+### 14.4 — Image Gallery
+
+_May need its own session — CMS media wiring is feature work, not just a design pass._
+
+- [ ] Ask if there are any revisions to the current design of the Image Gallery section across all six breakpoints
+- [ ] Implement requested changes
+- [ ] Connect CMS media uploads for gallery images (CMS image list field + renderer in `load-content.js`, lazy loading preserved) _(carry-forward from Phase 8)_
+- [ ] Verify gallery reflows correctly at all six breakpoints _(carry-forward from Phase 8)_
+- [ ] Test lightbox on mobile and desktop _(carry-forward from Phase 8)_
+- [ ] User visually verifies changes are correct
+
+### 14.5 — Prologue Section
+
+- [ ] Ask if there are any revisions to the current design of the Prologue section across all six breakpoints
+- [ ] Implement requested changes
+- [ ] User visually verifies changes are correct
+
+### 14.6 — Retail Section
+
+- [ ] Ask if there are any revisions to the current design of the Retail section across all six breakpoints
+- [ ] Implement requested changes
+- [ ] User visually verifies changes are correct
+
+### 14.7 — Footer Section
+
+- [ ] Ask if there are any revisions to the current design of the Footer section across all six breakpoints
+- [ ] Implement requested changes
+- [ ] User visually verifies changes are correct
+
+### 14.8 — Easter Egg Section
+
+- [ ] Ask if there are any revisions to the current design of the Easter Egg section across all six breakpoints
+- [ ] Implement requested changes
+- [ ] User visually verifies changes are correct
+
+### Deliverables
+
+- Final revision pass completed and visually verified for all 8 sections
+- No open per-section design changes remain before animation work begins
+
+---
+
+## Phase 15 — Section Animations
 
 **Goal:** Add scroll-triggered and interactive animations to all sections with full `prefers-reduced-motion` fallbacks.
 
-### 14.1 — Scroll-Triggered Animations
+### 15.1 — Scroll-Triggered Animations
 
 - [ ] Use `IntersectionObserver` to trigger class additions as sections enter viewport
 - [ ] Implement: fade-in, slide-up, stagger reveals for list/grid elements per section
 - [ ] Fallback: elements visible at full opacity on load when motion is reduced
 
-### 14.2 — Hero Animations
+### 15.2 — Hero Animations
 
 - [ ] Animated text reveal (character stagger or word fade-in)
 - [ ] Moving graphic or background element in hero
 - [ ] Fallback: static layout with no movement; content fully readable
 
-### 14.3 — Hover Effects
+### 15.3 — Hover Effects
 
 - [ ] Buttons and interactive elements: scale, color, underline, shadow transitions
 - [ ] Gallery images: overlay reveal or subtle zoom on hover
@@ -364,13 +429,13 @@
 - [ ] Retail links: transition effects on hover
 - [ ] Fallback: standard `:focus-visible` styles when motion is reduced
 
-### 14.4 — Accent / Motion Effects
+### 15.4 — Accent / Motion Effects
 
 - [ ] Subtle ambient motion on decorative elements (floating shapes, gradient shifts, parallax)
 - [ ] Parallax: use `transform: translateY()` on scroll (not `background-attachment: fixed`)
 - [ ] Fallback: static positioning
 
-### 14.5 — Modal Transitions
+### 15.5 — Modal Transitions
 
 - [ ] Open/close animations for full-screen modal (fade + scale)
 - [ ] Fallback: instant show/hide with no transition
@@ -383,19 +448,26 @@
 
 ---
 
-## Phase 15 — Responsive QA, Testing & Launch
+## Phase 16 — Responsive QA, Testing & Launch
 
 **Goal:** A fully QA'd, performant, accessible site deployed to Main on GitHub.
 
-### 15.1 — Responsive QA
+### 16.0 — Resolve Open Carry-Forwards
 
-- [ ] Test all sections at: 320px, 390px, 768px, 1024px, 1280px, 1440px, 1920px
+Catch-all gate before QA begins: nothing unresolved should enter 16.1.
+
+- [ ] Sweep `ROADMAP.md` for unchecked boxes in Phases 0–15, plus the Carry-Forwards sections of every `sessions/NNN-log.md` and `sessions/maintenance-log.md`
+- [ ] Resolve each open item, or get explicit user sign-off to defer it past launch (record the decision in the session log)
+
+### 16.1 — Responsive QA
+
+- [ ] Test all sections at: 320px, 390px, 768px, 1024px, 1280px, 1440px, 1920px, 2560px _(first check above 1440px — all earlier phases verified only the six standard breakpoints)_
 - [ ] Verify nav collapses correctly on mobile
 - [ ] Verify gallery grid reflows appropriately
 - [ ] Verify modal is usable on small screens (no overflow, scrollable if needed)
 - [ ] Verify animations do not cause layout shift on mobile
 
-### 15.2 — Accessibility Audit
+### 16.2 — Accessibility Audit
 
 - [ ] Run axe or Lighthouse accessibility audit; resolve all critical issues
 - [ ] Verify keyboard navigation through nav, modals, gallery, retail links, easter egg
@@ -403,7 +475,7 @@
 - [ ] Confirm color contrast meets WCAG AA for all text
 - [ ] Confirm focus states are visible and styled
 
-### 15.3 — Performance
+### 16.3 — Performance
 
 - [ ] Run Lighthouse performance audit; target score 90+
 - [ ] Optimize images: use modern formats (WebP with JPEG fallback), correct sizing
@@ -411,17 +483,17 @@
 - [ ] Minimize and bundle CSS/JS via Vite build
 - [ ] Configure cache headers via `netlify.toml` for static assets
 
-### 15.4 — Cross-Browser Testing
+### 16.4 — Cross-Browser Testing
 
 - [ ] Chrome, Firefox, Safari (desktop and mobile), Edge
 
-### 15.5 — CMS Final Verification
+### 16.5 — CMS Final Verification
 
 - [ ] Confirm all CMS-editable fields are connected and update correctly
 - [ ] Confirm media uploads work via Netlify CMS / Git LFS
 - [ ] Document editorial workflow for content editors in `CMS-GUIDE.md`
 
-### 15.6 — Launch
+### 16.6 — Launch
 
 - [ ] Merge `dev` → `main`
 - [ ] Confirm Netlify auto-deploy triggers and completes successfully
