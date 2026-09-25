@@ -100,13 +100,13 @@
 **Goal:** All page sections built, connected to CMS, and visually based on Figma design reference. Sections can be developed in parallel.
 
 - [x] Ask if any design system tokens have been changed. If yes, ask for latest token set exported from Figma. Update `tokens.css` and `DESIGN-SYSTEM.md`with any changes. If anything is unclear stop and ask for input.
-- [ ] Make all sections responsive from 320px to 2560px _(verified only to 1440px — see note in session 011 prep)_
+- [ ] Make all sections responsive from 320px to 2560px _(verified only to 1440px — 1920px and 2560px checks slotted into Phase 16.1)_
 
 ### 3.1 — Hero Section
 
 - [x] hero layout based on design reference
 - [x] Animated graphic elements (placeholder for Phase 4 animation)
-- [ ] CMS-controlled graphic elements _(logo_image wired; hero background/foreground images still hardcoded)_
+- [ ] CMS-controlled graphic elements _(logo_image wired; hero background/foreground images still hardcoded — slotted into Phase 14.1)_
 
 ### 3.2 — About Section
 
@@ -184,7 +184,7 @@
 - [x] Connect CMS fields for hero__logo-wrap
 - [x] Verify hero renders correctly at 320px–2560px _(confirmed at the standard six breakpoints, 320–1440px)_
 - [x] Ask if there are any revisions to the nav bar
-- [ ] Test nav sticky behavior and scroll interactions on all breakpoints _(only confirmed at 768px/1024px — see session 006 log)_
+- [ ] Test nav sticky behavior and scroll interactions on all breakpoints _(only confirmed at 768px/1024px — see session 006 log; covered by Phase 13)_
 
 ### Deliverables
 
@@ -235,11 +235,11 @@
 ### Tasks
 
 - [x] Ask if there are any revisions to current design of the Image Gallery section
-- [ ] Connect CMS media uploads for gallery images _(images are hardcoded in `index.html`; not CMS-managed — see session 009 log)_
+- [ ] Connect CMS media uploads for gallery images _(images are hardcoded in `index.html`; not CMS-managed — see session 009 log; slotted into Phase 14.4)_
 - [x] Connect CMS fields for headline text
 - [x] Implement lazy loading for performance
-- [ ] Verify gallery reflows appropriately at 320px–2560px _(not formally verified at all six breakpoints — see session 009 log)_
-- [ ] Test lightbox on mobile and desktop _(not tested this session — see session 009 log)_
+- [ ] Verify gallery reflows appropriately at 320px–2560px _(not formally verified at all six breakpoints — see session 009 log; slotted into Phase 14.4)_
+- [ ] Test lightbox on mobile and desktop _(not tested this session — see session 009 log; slotted into Phase 14.4)_
 
 ### Deliverables
 
@@ -273,7 +273,7 @@
 - [ ] Ask if there are any revisions to current design of the Retail Section
 - [ ] Verify CMS fields for: store name, store URL, optional logo/icon, optional description
 - [ ] Ensure each link opens in new tab with `rel="noopener noreferrer"`
-- [ ] Verify responsive layout at 320px–2560px
+- [ ] Verify responsive layout at the six standard breakpoints (320, 390, 768, 1024, 1280, 1440)
 - [ ] Test all retail links on desktop and mobile
 
 ### Deliverables
@@ -291,7 +291,7 @@
 
 - [ ] Ask if there are any revisions to current design of the Footer section
 - [ ] Verify CMS fields for legal text
-- [ ] Verify responsive layout at 320px–2560px
+- [ ] Verify responsive layout at the six standard breakpoints (320, 390, 768, 1024, 1280, 1440)
 - [ ] Ensure footer displays correctly at bottom of page
 
 ### Deliverables
@@ -311,7 +311,7 @@
 - [ ] Connect CMS fields for easter egg content
 - [ ] Test scroll-lock on desktop and mobile (touch scroll behavior)
 - [ ] Test easter egg is discoverable via keyboard navigation and scrolling
-- [ ] Verify responsive layout at 320px–2560px
+- [ ] Verify responsive layout at the six standard breakpoints (320, 390, 768, 1024, 1280, 1440)
 
 ### Deliverables
 
@@ -326,7 +326,7 @@
 
 ### Tasks
 
-- [ ] Verify sticky positioning and z-index across all sections
+- [ ] Verify sticky positioning and z-index across all sections at all six standard breakpoints _(carry-forward from Phase 5 — previously only confirmed at 768px/1024px)_
 - [ ] Test nav scroll behavior (hide/show on scroll, if applicable)
 - [ ] Confirm all nav links smooth-scroll to correct section anchors
 - [ ] Verify keyboard navigation (Tab through nav, Enter to activate links)
@@ -348,6 +348,7 @@
 
 - [ ] Ask if there are any revisions to the current design of the Hero section across all six breakpoints (320, 390, 768, 1024, 1280, 1440)
 - [ ] Implement requested changes
+- [ ] Wire hero background/foreground `<picture>` `src`/`srcset` to the existing `hero_image`/`hero_bg` CMS fields _(carry-forward from Phase 3.1)_
 - [ ] User visually verifies changes are correct
 
 ### 14.2 — About Section
@@ -364,8 +365,13 @@
 
 ### 14.4 — Image Gallery
 
+_May need its own session — CMS media wiring is feature work, not just a design pass._
+
 - [ ] Ask if there are any revisions to the current design of the Image Gallery section across all six breakpoints
 - [ ] Implement requested changes
+- [ ] Connect CMS media uploads for gallery images (CMS image list field + renderer in `load-content.js`, lazy loading preserved) _(carry-forward from Phase 8)_
+- [ ] Verify gallery reflows correctly at all six breakpoints _(carry-forward from Phase 8)_
+- [ ] Test lightbox on mobile and desktop _(carry-forward from Phase 8)_
 - [ ] User visually verifies changes are correct
 
 ### 14.5 — Prologue Section
@@ -446,9 +452,16 @@
 
 **Goal:** A fully QA'd, performant, accessible site deployed to Main on GitHub.
 
+### 16.0 — Resolve Open Carry-Forwards
+
+Catch-all gate before QA begins: nothing unresolved should enter 16.1.
+
+- [ ] Sweep `ROADMAP.md` for unchecked boxes in Phases 0–15, plus the Carry-Forwards sections of every `sessions/NNN-log.md` and `sessions/maintenance-log.md`
+- [ ] Resolve each open item, or get explicit user sign-off to defer it past launch (record the decision in the session log)
+
 ### 16.1 — Responsive QA
 
-- [ ] Test all sections at: 320px, 390px, 768px, 1024px, 1280px, 1440px, 1920px
+- [ ] Test all sections at: 320px, 390px, 768px, 1024px, 1280px, 1440px, 1920px, 2560px _(first check above 1440px — all earlier phases verified only the six standard breakpoints)_
 - [ ] Verify nav collapses correctly on mobile
 - [ ] Verify gallery grid reflows appropriately
 - [ ] Verify modal is usable on small screens (no overflow, scrollable if needed)

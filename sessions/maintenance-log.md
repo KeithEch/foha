@@ -98,3 +98,29 @@ Read all session logs (001–010) and cross-checked their "Outcome"/"Carry-Forwa
 ### Carry-Forwards
 
 - None new. The "six standard breakpoints vs. 320px–2560px" wording inconsistency flagged in the previous maintenance entry (2026-08-10, checkbox audit) still applies project-wide; the new Phase 14 was written using the six-breakpoint standard to stay consistent with actual practice rather than repeat the aspirational wording.
+
+---
+
+## 2026-09-25 — Slotted open carry-forward gaps into later phases; added Phase 16.0 catch-all
+
+**Context:** Status review after a ~6-week gap turned up five open items from earlier phases with no home in the remaining roadmap, and no catch-all step to pick up leftovers before launch.
+
+### What Was Done
+
+1. **Placed each open gap in a later phase** as an explicit checkbox marked _(carry-forward from Phase N)_:
+   - Nav sticky behaviour at all breakpoints (Phase 5) → **Phase 13**, first task expanded to the six standard breakpoints
+   - Hero background/foreground CMS wiring (Phase 3.1) → **Phase 14.1**
+   - Gallery CMS media uploads, gallery reflow at six breakpoints, lightbox test (Phase 8) → **Phase 14.4**, with a note that it may need its own session
+   - Verification above 1440px (Phase 3) → **Phase 16.1**, test list extended with 2560px
+2. **Added `### 16.0 — Resolve Open Carry-Forwards`** at the start of Phase 16: sweep unchecked roadmap boxes and all session and maintenance log carry-forwards; resolve each one, or record the user's sign-off to defer it past launch.
+3. **Pointed each original unchecked box to its new phase** (Phases 3, 5, 8) so earlier phases show where the work went.
+4. **Changed "320px–2560px" to the six standard breakpoints** in the upcoming Phases 10, 11 and 12, matching how verification has actually been done. Completed phases were left as written.
+
+### Files Changed
+
+- `ROADMAP.md`
+- `sessions/maintenance-log.md`
+
+### Carry-Forwards
+
+- Session 011 (Phase 10 — Retail) is unaffected and still the next session.
