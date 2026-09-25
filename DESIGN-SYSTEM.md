@@ -66,6 +66,7 @@ Primitive colors are the raw palette. Do not use these in component styles — u
 | `--primitive-neutral-700` | `#4D4D4D` |
 | `--primitive-neutral-800` | `#333333` |
 | `--primitive-neutral-850` | `#262626` |
+| `--primitive-neutral-875` | `#222222` |
 | `--primitive-neutral-900` | `#1A1A1A` |
 
 ### Brown, Brorange, Beige
@@ -92,6 +93,7 @@ Primitive colors are the raw palette. Do not use these in component styles — u
 | `--color-bg-accent` | `brown-500` `#3D2514` | Accent panels, highlighted areas |
 | `--color-bg-action-default` | `black` `#000000` | Button / interactive element background (default state) |
 | `--color-bg-action-hover` | `mud-800` `#1A1817` | Button / interactive element background (hover state) |
+| `--color-bg-action-itch` | `neutral-875` `#222222` | itch.io retail button — matches the official itch.io badge background |
 | `--color-bg-nav` | `beige-500` `#E8CFA7` | Navigation bar background — warm parchment surface |
 
 ### Icon

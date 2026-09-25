@@ -270,11 +270,11 @@
 
 ### Tasks
 
-- [ ] Ask if there are any revisions to current design of the Retail Section
-- [ ] Verify CMS fields for: store name, store URL, optional logo/icon, optional description
-- [ ] Ensure each link opens in new tab with `rel="noopener noreferrer"`
-- [ ] Verify responsive layout at the six standard breakpoints (320, 390, 768, 1024, 1280, 1440)
-- [ ] Test all retail links on desktop and mobile
+- [x] Ask if there are any revisions to current design of the Retail Section
+- [x] Verify CMS fields for: store name, store URL, optional logo/icon, optional description _(verified: only store URL is CMS-driven, matched to hardcoded buttons by index; name unused, no logo/description fields — kept as-is by user decision, see session 011 log)_
+- [x] Ensure each link opens in new tab with `rel="noopener noreferrer"`
+- [x] Verify responsive layout at the six standard breakpoints (320, 390, 768, 1024, 1280, 1440)
+- [ ] Test all retail links on desktop and mobile _(desktop + emulated mobile widths verified; real-phone test pending by user — see session 011 log)_
 
 ### Deliverables
 
