@@ -972,7 +972,7 @@ header.nav--hidden {
 }
 
 .retail__cover-col {
-  width: 100%;
+  width: 50%;
 }
 
 .retail__cover-frame {
@@ -992,8 +992,11 @@ header.nav--hidden {
 
 .retail__content-col {
   width: 100%;
+  padding-inline: var(--space-24);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: var(--space-32);
 }
 
@@ -1006,9 +1009,12 @@ header.nav--hidden {
 }
 
 .retail__links-list {
+  /* DriveThru logo width — also sets every button's min-width (logo + padding + border) */
+  --retail-logo-width: 200px;
   list-style: none;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--space-24);
 }
 
@@ -1020,6 +1026,7 @@ header.nav--hidden {
   border: var(--border-xs) solid var(--color-border-action-primary-default);
   border-radius: var(--radius-lg);
   padding: var(--space-4) var(--space-16);
+  min-width: calc(var(--retail-logo-width) + 2 * var(--space-16) + 2 * var(--border-xs));
   min-height: 60px;
   text-decoration: none;
   transition: opacity var(--duration-fast);
@@ -1041,6 +1048,16 @@ header.nav--hidden {
   object-fit: contain;
 }
 
+.retail__link--itch {
+  background-color: var(--color-bg-action-itch);
+}
+
+.retail__link--drivethu .retail__link-img {
+  width: var(--retail-logo-width);
+  max-height: none;
+  height: auto;
+}
+
 .retail__link--sample {
   border-color: var(--color-border-strong);
   font-family: var(--font-family-base);
@@ -1058,10 +1075,17 @@ header.nav--hidden {
   color: var(--color-text-paragraph-on-dark);
 }
 
+@media (min-width: 768px) { /* --bp-tablet */
+  .retail__content-col {
+    padding-inline: 0;
+  }
+}
+
 @media (min-width: 1024px) { /* --bp-desktop */
   .retail__container {
     flex-direction: row;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     padding: 79px 70px;
     gap: var(--space-56);
   }
@@ -1073,7 +1097,13 @@ header.nav--hidden {
 
   .retail__content-col {
     flex: 1;
-    max-width: 747px;
+    max-width: 560px; /* 747px reduced by 25% */
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .retail__links-list {
+    align-items: flex-start;
   }
 
   .retail__heading {

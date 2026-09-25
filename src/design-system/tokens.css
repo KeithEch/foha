@@ -60,6 +60,7 @@
   --primitive-neutral-700: #4D4D4D;
   --primitive-neutral-800: #333333;
   --primitive-neutral-850: #262626;
+  --primitive-neutral-875: #222222;
   --primitive-neutral-900: #1A1A1A;
 
   --primitive-brown-500:   #3D2514;
@@ -79,6 +80,7 @@
   --color-bg-subtle-80:      var(--primitive-black-80);
   --color-bg-action-default: var(--primitive-black);
   --color-bg-action-hover:   var(--primitive-mud-800);
+  --color-bg-action-itch:    var(--primitive-neutral-875);
   --color-bg-nav:            var(--primitive-beige-500);
 
   /* ---------------------------------------------------
